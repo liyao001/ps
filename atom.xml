@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Li Yao</title>
+  
+  <subtitle>Reseach | Technique | Life</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://www.yaobio.com/"/>
+  <updated>2020-05-01T19:13:45.621Z</updated>
+  <id>https://www.yaobio.com/</id>
+  
+  <author>
+    <name>Li Yao</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>File templates for writing codes</title>
+    <link href="https://www.yaobio.com/posts/file-templates-for-writing-codes/"/>
+    <id>https://www.yaobio.com/posts/file-templates-for-writing-codes/</id>
+    <published>2020-04-29T21:17:37.000Z</published>
+    <updated>2020-05-01T19:13:45.621Z</updated>
+    
+    <content type="html"><![CDATA[<p>Some good templates for writing codes (<code>shell</code>, <code>python</code>, etc) were provided in this post.</p><h1 id="shell-script">Shell script</h1><ol type="1"><li>Specify shebang in the beginning of shell script, which tells the loader which interpreter should be called, this helps as different bashes have different syntaxes. In the following case, shebang line tells the loader to use user-preferred bash.</li><li>Add error handling: <code>set -o errexit;</code>, this will abort the execution of current shell script, if any command fails to be executed. When something wrong happens, this strategy helps you to locate the problem quickly, as traceback information will be highlighted at the line that the error actually occurs.</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/usr/bin/env bash</span></span><br><span class="line">set -o errexit;</span><br></pre></td></tr></table></figure><h1 id="python-script">Python script</h1><ol type="1"><li>Specify shebang in the beginning of python scripts, if you want to run the script directly <code>./one_script.py</code>.</li><li>Define Python source code encodings so that non-Latin characters will not disrupt the execution of a script.</li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># coding=utf-8</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Some good templates for writing codes (&lt;code&gt;shell&lt;/code&gt;, &lt;code&gt;python&lt;/code&gt;, etc) were provided in this post.&lt;/p&gt;
+&lt;h1 id=&quot;shell-script
+      
+    
+    </summary>
+    
+    
+      <category term="posts" scheme="https://www.yaobio.com/categories/posts/"/>
+    
+    
+      <category term="best_practice" scheme="https://www.yaobio.com/tags/best-practice/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Collection of commonly used references in bioinformatic analysis</title>
+    <link href="https://www.yaobio.com/posts/collection-of-commonly-used-references-in-bioinformatic-analysis/"/>
+    <id>https://www.yaobio.com/posts/collection-of-commonly-used-references-in-bioinformatic-analysis/</id>
+    <published>2020-04-22T21:41:22.000Z</published>
+    <updated>2020-05-01T14:29:13.772Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="human">Human</h1><h2 id="grch-38-hg38">GRCh 38 (hg38)</h2><h3 id="sequences">Sequences</h3><h3 id="annotations">Annotations</h3><h4 id="refseq">RefSeq</h4><ul><li>File name: <code>refseq.ver109.20190125.annotation.gtf.gz</code> (MD5 checksum: <code>848813de5b516e0f328046ef9c931091</code>)</li><li>Local path: <em>/References/Annotations/human/hg38/refseq.ver109.20190125.annotation.gtf.gz</em></li><li>Remote backup: <a href="https://osf.io/9jk3e/" target="_blank" rel="noopener">OSF</a></li><li>Description: RefSeq annotation in GTF format that has been remapped to use the same set of UCSC-style sequence identifiers used in the FASTA files. The annotation is NCBI Homo sapiens Updated Annotation Release 109.20190125 from 25 January 2019.</li><li>Recipe: <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_full_analysis_set.refseq_annotation.gtf.gz</span><br><span class="line">mv GCA_000001405.15_GRCh38_full_analysis_set.refseq_annotation.gtf.gz refseq.ver109.20190125.annotation.gtf.gz</span><br></pre></td></tr></table></figure></li></ul><h4 id="gencode">GENCODE</h4><ul><li>File name: <code>gencode.v24.annotation.gtf.gz</code> (MD5 checksum: <code>17395005bb4471605db62042b992893e</code>)</li><li>Local path: <em>/References/Annotations/human/hg38/gencode.v24.annotation.gtf.gz</em></li><li>Remote backup: <a href="https://osf.io/v4rn9/" target="_blank" rel="noopener">OSF</a></li><li>Description: GENCODE comprehensive annotation release 24. Downloaded from GENCODE's website.</li><li><p>Recipe: <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_24/gencode.v24.annotation.gtf.gz</span><br></pre></td></tr></table></figure></p></li><li>File name: <code>gencode.v24.segmented.tssup1kb.bed.gz</code> (MD5 checksum: <code>972a57431c6209667d5aac41bbb01ebd</code>)</li><li>Local path: <em>/References/Annotations/human/hg38/gencode.v24.segmented.tss<strong>up1kb</strong>.bed.gz</em></li><li>Remote backup: <a href="https://osf.io/ptde7/" target="_blank" rel="noopener">OSF</a></li><li>Description: Genomic segmentations (promoter, 5_UTR, exon, intron, 3_UTR, and intergenic region) based on GENCODE v24, promoters were defined as upstream 1kb of TSSs (transcripts).</li><li><p>Recipe: <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p></li><li>File name: <code>gencode.v24.segmented.tssflanking500b.bed.gz</code></li><li>Local Path: <em>/References/Anotations/human/hg38/gencode.v24.segmented.tss<strong>flanking500b</strong>.bed.gz</em></li><li>Remote backup: <a href="https://osf.io/4ht6c/" target="_blank" rel="noopener">OSF</a></li><li>Description: Genomic segmentations based on GENCODE v24, promoters were defined as TSS <span class="math inline">\(\pm\)</span> 500bp (transcripts). (<code>2e624c3bc2330beb81464558ead1a11e</code>)</li><li><p>Recipe: <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p></li></ul><h4 id="repeat-masker">Repeat Masker</h4><ul><li>File name: <code>rmsk.bed.gz</code> (MD5 checksum: <code>ae12aefbef9d4f5bc7695158a67d9a55</code>)</li><li>Local path: <em>/References/Annotations/human/hg38/rmsk.bed.gz</em></li><li>Remote backup: <a href="https://osf.io/e7w3k/" target="_blank" rel="noopener">OSF</a></li><li>Description: Repeat Masker from UCSC. The following fields were selected:<ul><li>genoName (Genomic sequence name)</li><li>genoStart (Start in genomic sequence)</li><li>genoEnd (End in genomic sequence)</li><li>strand (Relative orientation + or -)</li><li>repName (Name of repeat)</li><li>repFamily (Family of repeat).</li></ul></li><li>Recipe: <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget http://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/rmsk.txt.gz</span><br><span class="line">gunzip rmsk.txt.gz</span><br><span class="line">gawk 'OFS="\t"&#123;print $6,$7,$8,$11,$13,$10&#125;' rmsk.txt | \</span><br><span class="line">    sort -k1,1 -k2,2n | \</span><br><span class="line">    bgzip &gt; rmsk.bed.gz</span><br></pre></td></tr></table></figure></li></ul><h2 id="generic">Generic</h2><h3 id="sequences-1">Sequences</h3><ul><li>Primary assembly:</li><li>rRNA: Human ribosomal DNA complete repeating unit, GenBank accession code: U13369.1 .</li></ul><h3 id="annotations-1">Annotations</h3><h4 id="motif-databases-meme">Motif databases (MEME)</h4><ul><li>File name: <code>motif_databases.12.19.tgz</code> (MD5 checksum: <code>f5ffcaecc07570ee19dba20b82d7bd73</code>)</li><li>Local path: <em>/References/Annotations/human/generic/motif_databases.12.19.tgz</em></li><li>Remote backup: <a href="https://osf.io/cktus/" target="_blank" rel="noopener">OSF</a></li><li>Description: Motif databases for MEME suite (updated 28 Oct 2019).</li><li>Recipe: <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://alternate.meme-suite.org/meme-software/Databases/motifs/motif_databases.12.19.tgz</span><br></pre></td></tr></table></figure></li></ul><p><strong>Note</strong>: There are two types of promoters in both <code>gencode.v24.segmented.tssup1kb.bed</code> and <code>gencode.v24.segmented.tssflanking1kb.bed</code>:</p><ul><li>Promoters for protein coding genes (denote as <code>promoter</code> in these files)</li><li>Promoters for non-protein coding genes (denote as <code>promoter(NP)</code>)</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;human&quot;&gt;Human&lt;/h1&gt;
+&lt;h2 id=&quot;grch-38-hg38&quot;&gt;GRCh 38 (hg38)&lt;/h2&gt;
+&lt;h3 id=&quot;sequences&quot;&gt;Sequences&lt;/h3&gt;
+&lt;h3 id=&quot;annotations&quot;&gt;Annotations&lt;/h3&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="posts" scheme="https://www.yaobio.com/categories/posts/"/>
+    
+    
+      <category term="resources" scheme="https://www.yaobio.com/tags/resources/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>In silico analysis frameworks</title>
+    <link href="https://www.yaobio.com/projects/in-silico-analysis-frameworks/"/>
+    <id>https://www.yaobio.com/projects/in-silico-analysis-frameworks/</id>
+    <published>2020-04-19T21:11:09.000Z</published>
+    <updated>2020-05-03T01:42:06.072Z</updated>
+    
+    <content type="html"><![CDATA[<p>It's fundamental in bioinformatics that how should we organize and analyze data to maximize efficiency and reproducibility</p><h1 id="infrastructure">Infrastructure</h1><h1 id="references">References</h1><p>Many tools require genome-related assets</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;It&#39;s fundamental in bioinformatics that how should we organize and analyze data to maximize efficiency and reproducibility&lt;/p&gt;
+&lt;h1 id=&quot;in
+      
+    
+    </summary>
+    
+    
+      <category term="projects" scheme="https://www.yaobio.com/categories/projects/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>bioSyntax</title>
+    <link href="https://www.yaobio.com/tools/biosyntax/"/>
+    <id>https://www.yaobio.com/tools/biosyntax/</id>
+    <published>2019-11-22T16:40:40.000Z</published>
+    <updated>2020-05-03T01:05:34.868Z</updated>
+    
+    <content type="html"><![CDATA[<p>A tool to make inspecting biological sequences, regions and alignments an easier job.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;A tool to make inspecting biological sequences, regions and alignments an easier job.&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="tools" scheme="https://www.yaobio.com/categories/tools/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>BioQueue</title>
+    <link href="https://www.yaobio.com/update/bioqueue/"/>
+    <id>https://www.yaobio.com/update/bioqueue/</id>
+    <published>2019-11-22T16:40:40.000Z</published>
+    <updated>2020-05-01T14:28:42.347Z</updated>
+    
+    <content type="html"><![CDATA[<p>To improve stability of the service, BioQueue's open platform is now moved from NEFU to <a href='https://open.bioqueue.org' target="_blank" rel="noopener">our own server</a>. So the previous link (bioqueue.nefu.edu.cn) in our manuscript should be replaced with open.bioqueue.org.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;To improve stability of the service, BioQueue&#39;s open platform is now moved from NEFU to &lt;a href=&#39;https://open.bioqueue.org&#39; target=&quot;_blan
+      
+    
+    </summary>
+    
+    
+      <category term="update" scheme="https://www.yaobio.com/categories/update/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>RNA Editing Plus</title>
+    <link href="https://www.yaobio.com/update/rna-editing-plus/"/>
+    <id>https://www.yaobio.com/update/rna-editing-plus/</id>
+    <published>2019-04-22T21:33:30.000Z</published>
+    <updated>2020-05-01T14:28:51.856Z</updated>
+    
+    <content type="html"><![CDATA[<p>Due to funding issue, this project is no longer under maintenance. Original codes are part of the supplement, and datasets stored in our database is now available at <a href='https://osf.io/shb9y/' target='_blank'>OSF</a>.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Due to funding issue, this project is no longer under maintenance. Original codes are part of the supplement, and datasets stored in our 
+      
+    
+    </summary>
+    
+    
+      <category term="update" scheme="https://www.yaobio.com/categories/update/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>BioQueue</title>
+    <link href="https://www.yaobio.com/tools/bioqueue/"/>
+    <id>https://www.yaobio.com/tools/bioqueue/</id>
+    <published>2017-11-22T16:40:40.000Z</published>
+    <updated>2020-05-03T01:07:25.032Z</updated>
+    
+    <content type="html"><![CDATA[<p>BioQueue is a web-based framework to manage and analyze data.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;BioQueue is a web-based framework to manage and analyze data.&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="tools" scheme="https://www.yaobio.com/categories/tools/"/>
+    
+    
+  </entry>
+  
+</feed>
