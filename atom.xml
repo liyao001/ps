@@ -99,6 +99,30 @@
   </entry>
   
   <entry>
+    <title>BioQueue</title>
+    <link href="https://www.yaobio.com/update/bioqueue/"/>
+    <id>https://www.yaobio.com/update/bioqueue/</id>
+    <published>2019-11-22T16:40:40.000Z</published>
+    <updated>2020-05-01T14:28:42.347Z</updated>
+    
+    <content type="html"><![CDATA[<p>To improve stability of the service, BioQueue's open platform is now moved from NEFU to <a href='https://open.bioqueue.org' target="_blank" rel="noopener">our own server</a>. So the previous link (bioqueue.nefu.edu.cn) in our manuscript should be replaced with open.bioqueue.org.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;To improve stability of the service, BioQueue&#39;s open platform is now moved from NEFU to &lt;a href=&#39;https://open.bioqueue.org&#39; target=&quot;_blan
+      
+    
+    </summary>
+    
+    
+      <category term="update" scheme="https://www.yaobio.com/categories/update/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>bioSyntax</title>
     <link href="https://www.yaobio.com/tools/biosyntax/"/>
     <id>https://www.yaobio.com/tools/biosyntax/</id>
@@ -119,30 +143,6 @@
     
     
       <category term="tools" scheme="https://www.yaobio.com/categories/tools/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>BioQueue</title>
-    <link href="https://www.yaobio.com/update/bioqueue/"/>
-    <id>https://www.yaobio.com/update/bioqueue/</id>
-    <published>2019-11-22T16:40:40.000Z</published>
-    <updated>2020-05-01T14:28:42.347Z</updated>
-    
-    <content type="html"><![CDATA[<p>To improve stability of the service, BioQueue's open platform is now moved from NEFU to <a href='https://open.bioqueue.org' target="_blank" rel="noopener">our own server</a>. So the previous link (bioqueue.nefu.edu.cn) in our manuscript should be replaced with open.bioqueue.org.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;To improve stability of the service, BioQueue&#39;s open platform is now moved from NEFU to &lt;a href=&#39;https://open.bioqueue.org&#39; target=&quot;_blan
-      
-    
-    </summary>
-    
-    
-      <category term="update" scheme="https://www.yaobio.com/categories/update/"/>
     
     
   </entry>
