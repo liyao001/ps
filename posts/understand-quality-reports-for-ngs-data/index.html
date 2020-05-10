@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://www.yaobio.com/posts/understand-quality-reports-for-ngs-data/ts.png">
 <meta property="og:image" content="https://www.yaobio.com/posts/understand-quality-reports-for-ngs-data/adapter.png">
 <meta property="article:published_time" content="2020-05-10T13:11:34.000Z">
-<meta property="article:modified_time" content="2020-05-10T17:02:40.068Z">
+<meta property="article:modified_time" content="2020-05-10T17:17:38.952Z">
 <meta property="article:author" content="Li Yao">
 <meta property="article:tag" content="technical_docs">
 <meta name="twitter:card" content="summary">
@@ -199,7 +199,9 @@
             <p>When analyzing NGS data, it's always beneficial to use quality control tools like FastQC to check the quality of the data. In this post, I summarized cases where we can use diagnostic plots from FastQC to solve problems.</p>
 <p><em>Segementation of this article is based-on the output from FastQC, but criteria or cases mentioned here should also be applicable to similar measurements produced by other tools.</em></p>
 <h2 id="per-base-sequence-quality">Per base sequence quality</h2>
+<p>No cases yet.</p>
 <h2 id="per-sequence-quality-scores">Per sequence quality scores</h2>
+<p>No cases yet.</p>
 <h2 id="per-base-sequence-content-pbsc">Per Base Sequence Content (PBSC)</h2>
 <p>PBSC aggregates the percent of each base position in a fastq file for which each of the four normal DNA bases has been called. In a random library, you would expect that lines to be parallel with each other (around 25%), as there would be little to no difference between the different bases of a sequence run. The actual distributions may have some fluctuations, depending on the overall amount of bases in the genome you study and the capturing bias from the assay, but in most cases there should not be huge bias.</p>
 <p>PBSCs can be used as diagnostics for:</p>
@@ -216,10 +218,15 @@
 <li>For libraries treated with sodium bisulphite, which will convert C to T, then percent of Cs will be very low.</li>
 </ul>
 <h2 id="per-sequence-gc-content">Per sequence GC content</h2>
+<p>No cases yet.</p>
 <h2 id="per-base-n-content">Per base N content</h2>
+<p>No cases yet.</p>
 <h2 id="sequence-length-distribution">Sequence Length Distribution</h2>
+<p>No cases yet.</p>
 <h2 id="sequence-duplication-levels">Sequence Duplication Levels</h2>
+<p>No cases yet.</p>
 <h2 id="overrepresented-sequences">Overrepresented sequences</h2>
+<p>No cases yet.</p>
 <h2 id="adapater-content-ac">Adapater Content (AC)</h2>
 <p>For libraries where a significant amout of the inserts are shorter than sequencing length (like PROcap, PROseq, etc), then adapters are likely to be incorporated in final reads. AC module compares reads with commonly used adapter sequences, and plots the enrichment. Adapter sequences may have large effect on sequencing alignments, so if you see warnings in this section, you may need to trim adapters with cutadapt, fastp or anyother tool. <img src="/posts/understand-quality-reports-for-ngs-data/adapter.png" class="" title="Untrimmed adapters"></p>
 <p>Reference: <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/" target="_blank" rel="noopener external nofollow noreferrer">FastQC manual</a></p>
@@ -231,7 +238,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2020-05-10T17:02:40.068Z" itemprop="dateUpdated">2020-05-10 13:02:40</time>
+    Last updated: <time datetime="2020-05-10T17:17:38.952Z" itemprop="dateUpdated">2020-05-10 13:17:38</time>
 </span><br>
 
 
