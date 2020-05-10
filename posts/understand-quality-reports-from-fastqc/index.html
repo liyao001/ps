@@ -14,25 +14,27 @@
     
     
     
-    <title>File templates for writing codes | Li Yao | Reseach | Technique | Life</title>
+    <title>Understand quality reports from FastQC | Li Yao | Reseach | Technique | Life</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="best_practice">
-    <meta name="description" content="Some good templates for writing codes (shell, python, etc) were provided in this post. Shell script  Specify shebang in the beginning of shell script, which tells the loader which interpreter should b">
+    <meta name="keywords" content="technical_docs">
+    <meta name="description" content="Number of output categories may change for different releases of FastQC, this doc is based on FastQC version 0.11.8. Per base sequence quality Per sequence quality scores Per base sequence content Dia">
 <meta property="og:type" content="article">
-<meta property="og:title" content="File templates for writing codes">
-<meta property="og:url" content="https://www.yaobio.com/posts/file-templates-for-writing-codes/index.html">
+<meta property="og:title" content="Understand quality reports from FastQC">
+<meta property="og:url" content="https://www.yaobio.com/posts/understand-quality-reports-from-fastqc/index.html">
 <meta property="og:site_name" content="Li Yao">
-<meta property="og:description" content="Some good templates for writing codes (shell, python, etc) were provided in this post. Shell script  Specify shebang in the beginning of shell script, which tells the loader which interpreter should b">
+<meta property="og:description" content="Number of output categories may change for different releases of FastQC, this doc is based on FastQC version 0.11.8. Per base sequence quality Per sequence quality scores Per base sequence content Dia">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-29T21:17:37.000Z">
-<meta property="article:modified_time" content="2020-05-01T19:13:45.621Z">
+<meta property="og:image" content="https://www.yaobio.com/posts/understand-quality-reports-from-fastqc/barcode_TGGTCAC.png">
+<meta property="article:published_time" content="2020-05-10T04:00:00.000Z">
+<meta property="article:modified_time" content="2020-05-10T13:25:27.741Z">
 <meta property="article:author" content="Li Yao">
-<meta property="article:tag" content="best_practice">
+<meta property="article:tag" content="technical_docs">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.yaobio.com/posts/understand-quality-reports-from-fastqc/barcode_TGGTCAC.png">
     
         <link rel="alternate" type="application/atom+xml" title="Li Yao" href="/atom.xml">
     
@@ -117,7 +119,7 @@
             <a href="javascript:;" rel="external nofollow noreferrer" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
                 <i class="icon icon-lg icon-navicon"></i>
             </a>
-            <div class="flex-col header-title ellipsis">File templates for writing codes</div>
+            <div class="flex-col header-title ellipsis">Understand quality reports from FastQC</div>
             
             <div class="search-wrap" id="search-wrap">
                 <a href="javascript:;" rel="external nofollow noreferrer" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -140,11 +142,11 @@
     <header class="content-header post-header">
 
         <div class="container fade-scale">
-            <h1 class="title">File templates for writing codes</h1>
+            <h1 class="title">Understand quality reports from FastQC</h1>
             <h5 class="subtitle">
                 
-                <time datetime="2020-04-29T21:17:37.000Z" itemprop="datePublished" class="page-time">
-  2020-04-29
+                <time datetime="2020-05-10T04:00:00.000Z" itemprop="datePublished" class="page-time">
+  2020-05-10
 </time>
 
 
@@ -168,21 +170,21 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>Table of Content</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#shell-script"><span class="post-toc-number">1.</span> <span class="post-toc-text">Shell script</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#python-script"><span class="post-toc-number">2.</span> <span class="post-toc-text">Python script</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#per-base-sequence-quality"><span class="post-toc-number">1.</span> <span class="post-toc-text">Per base sequence quality</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#per-sequence-quality-scores"><span class="post-toc-number">2.</span> <span class="post-toc-text">Per sequence quality scores</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#per-base-sequence-content"><span class="post-toc-number">3.</span> <span class="post-toc-text">Per base sequence content</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#per-sequence-gc-content"><span class="post-toc-number">4.</span> <span class="post-toc-text">Per sequence GC content</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#per-base-n-content"><span class="post-toc-number">5.</span> <span class="post-toc-text">Per base N content</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#sequence-length-distribution"><span class="post-toc-number">6.</span> <span class="post-toc-text">Sequence Length Distribution</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#sequence-duplication-levels"><span class="post-toc-number">7.</span> <span class="post-toc-text">Sequence Duplication Levels</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#overrepresented-sequences"><span class="post-toc-number">8.</span> <span class="post-toc-text">Overrepresented sequences</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#adapater-content"><span class="post-toc-number">9.</span> <span class="post-toc-text">Adapater Content</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-BestPractice-Scripts"
+<article id="post-doc-fastqc"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">File templates for writing codes</h1>
+        <h1 class="post-card-title">Understand quality reports from FastQC</h1>
         <div class="post-meta">
-            <time class="post-time" title="2020-04-29 17:17:37" datetime="2020-04-29T21:17:37.000Z"  itemprop="datePublished">2020-04-29</time>
+            <time class="post-time" title="2020-05-10 00:00:00" datetime="2020-05-10T04:00:00.000Z"  itemprop="datePublished">2020-05-10</time>
 
             
-	<ul class="article-category-list" itemprop="keywords"><li class="article-category-list-item"><a class="article-category-list-link" href="/tags/best-practice/" rel="tag">best_practice</a></li></ul>
+	<ul class="article-category-list" itemprop="keywords"><li class="article-category-list-item"><a class="article-category-list-link" href="/tags/technical-docs/" rel="tag">technical_docs</a></li></ul>
 
             
 <span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
@@ -192,19 +194,17 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>Some good templates for writing codes (<code>shell</code>, <code>python</code>, etc) were provided in this post.</p>
-<h1 id="shell-script">Shell script</h1>
-<ol type="1">
-<li>Specify shebang in the beginning of shell script, which tells the loader which interpreter should be called, this helps as different bashes have different syntaxes. In the following case, shebang line tells the loader to use user-preferred bash.</li>
-<li>Add error handling: <code>set -o errexit;</code>, this will abort the execution of current shell script, if any command fails to be executed. When something wrong happens, this strategy helps you to locate the problem quickly, as traceback information will be highlighted at the line that the error actually occurs.</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/usr/bin/env bash</span></span><br><span class="line">set -o errexit;</span><br></pre></td></tr></table></figure>
-<h1 id="python-script">Python script</h1>
-<ol type="1">
-<li>Specify shebang in the beginning of python scripts, if you want to run the script directly <code>./one_script.py</code>.</li>
-<li>Define Python source code encodings so that non-Latin characters will not disrupt the execution of a script.</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># coding=utf-8</span></span><br></pre></td></tr></table></figure>
+            <p>Number of output categories may change for different releases of FastQC, this doc is based on FastQC version 0.11.8.</p>
+<h2 id="per-base-sequence-quality">Per base sequence quality</h2>
+<h2 id="per-sequence-quality-scores">Per sequence quality scores</h2>
+<h2 id="per-base-sequence-content">Per base sequence content</h2>
+<p>Diagnostic for untrimmed barcodes, below is an example showing that 5' barcodes (TGGTCAC) are not trimmed: <img src="/posts/understand-quality-reports-from-fastqc/barcode_TGGTCAC.png" class="" title="Per base sequence content suggests the existence of 5" alt="barcode TGGTCAC"></p>
+<h2 id="per-sequence-gc-content">Per sequence GC content</h2>
+<h2 id="per-base-n-content">Per base N content</h2>
+<h2 id="sequence-length-distribution">Sequence Length Distribution</h2>
+<h2 id="sequence-duplication-levels">Sequence Duplication Levels</h2>
+<h2 id="overrepresented-sequences">Overrepresented sequences</h2>
+<h2 id="adapater-content">Adapater Content</h2>
 
         </div>
 
@@ -213,12 +213,12 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2020-05-01T19:13:45.621Z" itemprop="dateUpdated">2020-05-01 15:13:45</time>
+    Last updated: <time datetime="2020-05-10T13:25:27.741Z" itemprop="dateUpdated">2020-05-10 09:25:27</time>
 </span><br>
 
 
         
-        This article is posted in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. <br> Permanent link to this post: <a href="/posts/file-templates-for-writing-codes/" target="_blank" rel="external">https://www.yaobio.com/posts/file-templates-for-writing-codes/</a>
+        This article is posted in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. <br> Permanent link to this post: <a href="/posts/understand-quality-reports-from-fastqc/" target="_blank" rel="external">https://www.yaobio.com/posts/understand-quality-reports-from-fastqc/</a>
         
     </div>
     
@@ -235,7 +235,7 @@
 
         <div class="post-footer">
             <!--
-	<ul class="article-category-list" itemprop="keywords"><li class="article-category-list-item"><a class="article-category-list-link" href="/tags/best-practice/" rel="tag">best_practice</a></li></ul>
+	<ul class="article-category-list" itemprop="keywords"><li class="article-category-list-item"><a class="article-category-list-link" href="/tags/technical-docs/" rel="tag">technical_docs</a></li></ul>
 -->
 
             
@@ -245,7 +245,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.yaobio.com/posts/file-templates-for-writing-codes/&title=《File templates for writing codes》 — Li Yao&pic=https://www.yaobio.com/img/profile.png" rel="external nofollow noreferrer" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.yaobio.com/posts/understand-quality-reports-from-fastqc/&title=《Understand quality reports from FastQC》 — Li Yao&pic=https://www.yaobio.com/img/profile.png" rel="external nofollow noreferrer" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -255,22 +255,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.yaobio.com/posts/file-templates-for-writing-codes/&title=《File templates for writing codes》 — Li Yao&source=" rel="external nofollow noreferrer" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.yaobio.com/posts/understand-quality-reports-from-fastqc/&title=《Understand quality reports from FastQC》 — Li Yao&source=" rel="external nofollow noreferrer" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.yaobio.com/posts/file-templates-for-writing-codes/" rel="external nofollow noreferrer" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.yaobio.com/posts/understand-quality-reports-from-fastqc/" rel="external nofollow noreferrer" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《File templates for writing codes》 — Li Yao&url=https://www.yaobio.com/posts/file-templates-for-writing-codes/&via=https://www.yaobio.com" rel="external nofollow noreferrer" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Understand quality reports from FastQC》 — Li Yao&url=https://www.yaobio.com/posts/understand-quality-reports-from-fastqc/&via=https://www.yaobio.com" rel="external nofollow noreferrer" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.yaobio.com/posts/file-templates-for-writing-codes/" rel="external nofollow noreferrer" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.yaobio.com/posts/understand-quality-reports-from-fastqc/" rel="external nofollow noreferrer" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -290,21 +290,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/posts/understand-quality-reports-from-fastqc/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Understand quality reports from FastQC</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/posts/collection-of-commonly-used-references-in-bioinformatic-analysis/" id="post-next" class="post-nav-link">
+      <a href="/posts/file-templates-for-writing-codes/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Collection of commonly used references in bioinformatic analysis</h4>
+        <h4 class="title">File templates for writing codes</h4>
       </a>
     </div>
   
@@ -378,7 +371,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.yaobio.com/posts/file-templates-for-writing-codes/&title=《File templates for writing codes》 — Li Yao&pic=https://www.yaobio.com/img/profile.png" rel="external nofollow noreferrer" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.yaobio.com/posts/understand-quality-reports-from-fastqc/&title=《Understand quality reports from FastQC》 — Li Yao&pic=https://www.yaobio.com/img/profile.png" rel="external nofollow noreferrer" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -388,22 +381,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.yaobio.com/posts/file-templates-for-writing-codes/&title=《File templates for writing codes》 — Li Yao&source=" rel="external nofollow noreferrer" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.yaobio.com/posts/understand-quality-reports-from-fastqc/&title=《Understand quality reports from FastQC》 — Li Yao&source=" rel="external nofollow noreferrer" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.yaobio.com/posts/file-templates-for-writing-codes/" rel="external nofollow noreferrer" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.yaobio.com/posts/understand-quality-reports-from-fastqc/" rel="external nofollow noreferrer" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《File templates for writing codes》 — Li Yao&url=https://www.yaobio.com/posts/file-templates-for-writing-codes/&via=https://www.yaobio.com" rel="external nofollow noreferrer" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Understand quality reports from FastQC》 — Li Yao&url=https://www.yaobio.com/posts/understand-quality-reports-from-fastqc/&via=https://www.yaobio.com" rel="external nofollow noreferrer" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.yaobio.com/posts/file-templates-for-writing-codes/" rel="external nofollow noreferrer" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.yaobio.com/posts/understand-quality-reports-from-fastqc/" rel="external nofollow noreferrer" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -414,7 +407,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" rel="external nofollow noreferrer"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJElEQVR42u3ay07DMBAFUP7/p0FiC2nuHQek2scrlAbXp4uR5/HxEa/P73X1/Gq1O7f/Wy8MDIy3ZSRHeb31z0+vniQHvYLd7ICBgXEAo90u5129v7I/BgYGRv6V+fUuvwJiYGBgPBtw82MlFz4MDAyM14xk65Xk86kr4wO5OAYGxhsyZuX7//n7D/sbGBgYb8L4LFdy1Wtbng+cCgMDY2tG3oBM3nzNWHkzCscYGBhbM/L0Mi+W5Ulv21SIMBgYGNsxiuL76Ch/0bzEwMA4jZEH02KjMimdjXrc3HYxMDC2YLRlspXMsU1HCx4GBsZhjBawkqzOEuNfzoaBgXEAY1iZi4cz1sP0TRMUAwPjYEayUfv+bPz05gwYGBgHMJKa3GxQbBZ826IbBgbGOYxZW3FlqCsJ5cWYBQYGxjGMvG2ZjHAlIbs9w03VEAMDYztGex2cPZ+NdNTTIhgYGJsy2mGLWYqbINuxDAwMjHMYs7Sz/Zp8mCNvQmBgYJzDaK99dcl+9ruWVAwMjBMY7bBF/jwvqC2FbwwMjK0ZyZjXSimtTYOTsIuBgXEaY9ZQTDD5z9Q2GH75FAMDY2tGvto0NW9Pro9rYGBgnMB4Nslc/+XaaygGBsY5jLZw1pbY2mZAHfQxMDAw4pGIWWszSWujohsGBgZGXCabpazRFfCpgIuBgfGGjLwZ0IbOWdO0Tm4xMDC2ZswSyPaa2O42vCBiYGDsxvgCjFED8RHEawwAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqElEQVR42u3awW6FQAgF0Pf/P91umzT6LjAYF8dVo3WcYxOhwOcTHz//jquryb35an+vXq1/4MDDw8Mbb/1q6Srv/szV+vnV5GXh4eHh7fGuvqj579w/OAkh1ded7AcPDw/vPbzJpvPXl9yLh4eH935ejpmc6b0OPDw8vCd5eQqbl2Xn203wx2oteHh4eDEv7yK95+eV/h4eHh7euKvea4aVU94ir7BbPDw8vAVeNZ3tNbcmLbFe2o2Hh4e3x6uOUk1geek2eXoUZvDw8PAe5OWf6V4JtZfE58Hmk/w18PDw8Aa8QvZdTHZzfF66PVaGwMPDw2vxJpvOz/fS5d7KzT4eHh4eXnx1/tFPygT3pYp8zWpLDA8PD2+PVx1mmjexeuMI5bCEh4eH9wjv1ChAb2ggDwZRyQMPDw9vgVctTFSLp3lrrVrMzVNzPDw8vLO8amBIfj8fFEhI1WIEHh4e3jO8pDzRG8+qhpBP8fiyEzw8PLwF3qTNn7PzYNMbzyoXI/Dw8PDGvGpBtlc+yBPrpDhb2CceHh7eMm8jMPSOXnKPh4eH9zyvh6xut5dS94ax8PDw8M7yfuIj+WTPC7LVYPBlP3h4eHjLvFPnJwMH1Sd+WQEPDw9vgVf9WCePnyTik9ZaErTw8PDwTvHuP7v5RvMkuzqSVR1uiB6Ph4eHd5Q3T6OTIkIvIOWJOx4eHt42Ly/O5uEhHziYjxo0K8R4eHh4Y1iS7FaHAO5fWc4uByE8PDy8BV7vG5uEgV7raxJmjoUQPDw8vICXB4NTgwV7gQEPDw/vSV6vADEZt6r2qpp34eHh4b2A18vZJ2WOUXqNh4eH92Je70xvhUILDQ8PD2+NV02O5yl4bzQhSevx8PDwtnnVf/h7QwN5MywvAR/u7+Hh4eF9v/cXvOy7YO57EJIAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
