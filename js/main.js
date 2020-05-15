@@ -92,8 +92,10 @@
         fixedHeader: function (top) {
             if (top > header.clientHeight) {
                 header.classList.add('fixed');
+                header.classList.add('higher-z');
             } else {
                 header.classList.remove('fixed');
+                header.classList.remove('higher-z');
             }
         },
         toc: (function () {

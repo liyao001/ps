@@ -119,3 +119,6 @@
     position: relative;
     z-index: 32;
 }
+.higher-z {
+    z-index: 33;
+}
