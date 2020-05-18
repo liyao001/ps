@@ -115,7 +115,11 @@
 .alt-links .ggs {
     background: url('/img/alt_links.png') -10px -118px;
 }
+.post-header {
+    padding-bottom: 268px !important;
+}
 .post-card {
+    margin-top: -207px !important;
     position: relative;
     z-index: 32;
 }
