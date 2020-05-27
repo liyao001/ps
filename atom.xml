@@ -178,15 +178,15 @@
     <link href="https://www.yaobio.com/update/bioqueue/"/>
     <id>https://www.yaobio.com/update/bioqueue/</id>
     <published>2019-11-22T16:40:40.000Z</published>
-    <updated>2020-05-01T14:28:42.347Z</updated>
+    <updated>2020-05-27T01:52:00.366Z</updated>
     
-    <content type="html"><![CDATA[<p>To improve stability of the service, BioQueue's open platform is now moved from NEFU to <a href='https://open.bioqueue.org' target="_blank" rel="noopener external nofollow noreferrer">our own server</a>. So the previous link (bioqueue.nefu.edu.cn) in our manuscript should be replaced with open.bioqueue.org.</p>]]></content>
+    <content type="html"><![CDATA[<p>BioQueue is constantly being updated, below are the updates which had beed introduced since the original publication of BioQueue in 2017.</p><h2 id="framework">Framework</h2><ul><li>Moved from Python 2.7 to Python 3.x;</li><li>Workspace: allowed users to add multiple workspaces and assign jobs to workspaces;</li><li>Version control for protocols;</li><li>Conda environment: allowed users to activate specific conda enrironment before running a specific step (will automatically deactivate after the step finishes.)</li></ul><h2 id="auxiliary-functions">Auxiliary functions</h2><ul><li>Sample pool: managing uploaded files/samples with additional information about them (like sample name, sequencing depth, preprocessing, citation, etc);</li><li>Job name filter: allowed users to filter jobs with certain keywords;</li><li>Archiving and sharing job outputs with collaborators via Google Drive;</li><li>Job integrity check:<ul><li>Is this job analyzed with the newest version of protocol? (If true, the job will be marked as yellow)</li><li>Are there any changes among inputs or outputs of this job after its finishing? (If true, the job will be marked as red)</li></ul></li></ul><h2 id="misc">Misc</h2><ul><li>Appearance of job cards: changed the order of job input, parameter, output dir and manipulative buttons;</li><li>Open platform: To improve stability of the service, BioQueue's open platform is now moved from NEFU to <a href='https://open.bioqueue.org' target="_blank" rel="noopener external nofollow noreferrer">our own server</a>. So the previous link (bioqueue.nefu.edu.cn) in our manuscript should be replaced with open.bioqueue.org.</li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;To improve stability of the service, BioQueue&#39;s open platform is now moved from NEFU to &lt;a href=&#39;https://open.bioqueue.org&#39; target=&quot;_blan
+        &lt;p&gt;BioQueue is constantly being updated, below are the updates which had beed introduced since the original publication of BioQueue in 2017.
       
     
     </summary>
