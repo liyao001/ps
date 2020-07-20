@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yaobio.com/"/>
-  <updated>2020-07-20T13:53:08.282Z</updated>
+  <updated>2020-07-20T13:57:25.674Z</updated>
   <id>https://www.yaobio.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.yaobio.com/posts/setting-up-a-handy-account-on-linux-servers/"/>
     <id>https://www.yaobio.com/posts/setting-up-a-handy-account-on-linux-servers/</id>
     <published>2020-07-20T13:31:47.000Z</published>
-    <updated>2020-07-20T13:53:08.282Z</updated>
+    <updated>2020-07-20T13:57:25.674Z</updated>
     
     <content type="html"><![CDATA[<h2 id="login-with-ssh-key">Login with SSH key</h2><p>Puting your password every time when you login into a server via SSH can be tiresome, especially if your password is long. One way to make life easier and also safer is to use SSH keys.</p><ol type="1"><li>In the terminal of your local machine, type in <code>ssh-keygen</code>. By default, the keys will be exported to <code>~/.ssh/id_rsa</code>, using the default is okay in most cases, but if you have multiple keys want to avoid conflicts, you can change the destination. When it prompts you to enter a passphrase, you can just click Enter (empty passphrase) so that when you login to a server use this key pair, you don't need to input anything. But for better security, a passphrase is suggested.</li><li>Copy your SSH public key into the server by <code>ssh-copy-id -i ~/.ssh/id_rsa.pub user_name@server_address</code> (change the path to the public key if you've saved it somewhere else). You'll be prompted to enter <strong>your password at the server</strong>.</li><li>Log into the server by <code>ssh user_name@server_address</code>. You should be able to login without having to enter your password! If it doesn't work, check the permission of the <code>~/.ssh</code> folder on your server. Only you should have write access to it. You can change its permission from your home folder by <code>chmod 700 .ssh</code>.</li></ol>]]></content>
     
@@ -39,7 +39,9 @@
       <category term="posts" scheme="https://www.yaobio.com/categories/posts/"/>
     
     
-      <category term="technical_docs, orientation" scheme="https://www.yaobio.com/tags/technical-docs-orientation/"/>
+      <category term="technical_docs" scheme="https://www.yaobio.com/tags/technical-docs/"/>
+    
+      <category term="orientation" scheme="https://www.yaobio.com/tags/orientation/"/>
     
   </entry>
   

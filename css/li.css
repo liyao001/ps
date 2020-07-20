@@ -138,3 +138,6 @@
 .higher-z {
     z-index: 33;
 }
+.article-category-list .article-category-list-item {
+    margin-right: 10px;
+}
