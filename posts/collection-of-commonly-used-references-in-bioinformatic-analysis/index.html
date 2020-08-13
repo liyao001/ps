@@ -79,7 +79,7 @@
                 </li>
             
                 <li class="waves-block waves-effect">
-                    <a href="/categories/projects" >
+                    <a href="/projects" >
                         <i class="icon icon-lg icon-tasks"></i>
                         Projects
                     </a>
@@ -93,14 +93,14 @@
                 </li>
             
                 <li class="waves-block waves-effect">
-                    <a href="/categories/tools" >
+                    <a href="/tools" >
                         <i class="icon icon-lg icon-rocket"></i>
                         Tools
                     </a>
                 </li>
             
-                <li class="waves-block waves-effect">
-                    <a href="/categories/posts" >
+                <li class="waves-block waves-effect active">
+                    <a href="/posts" >
                         <i class="icon icon-lg icon-archives"></i>
                         Posts
                     </a>
@@ -131,10 +131,6 @@
             </div>
             
             
-            <a href="javascript:;" rel="external nofollow noreferrer" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
-                <i class="icon icon-lg icon-share-alt"></i>
-            </a>
-            
         </div>
     </header>
     <header class="content-header post-header">
@@ -148,7 +144,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/posts/">posts</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/posts/">posts</a></li></ul>
 
                 
             </h5>
@@ -220,20 +216,20 @@
 </ul>
 <h5 id="gencode">GENCODE</h5>
 <ul>
-<li>File name: <code>gencode.v24.annotation.gtf.gz</code> (MD5 checksum: <code>17395005bb4471605db62042b992893e</code>)</li>
-<li>Local path: <em>/References/Annotations/human/hg38/gencode.v24.annotation.gtf.gz</em></li>
-<li>Remote backup: <a href="https://osf.io/v4rn9/" target="_blank" rel="noopener external nofollow noreferrer">OSF</a></li>
-<li>Description: GENCODE comprehensive annotation release 24. Downloaded from GENCODE's website.</li>
+<li><p>File name: <code>gencode.v24.annotation.gtf.gz</code> (MD5 checksum: <code>17395005bb4471605db62042b992893e</code>)</p></li>
+<li><p>Local path: <em>/References/Annotations/human/hg38/gencode.v24.annotation.gtf.gz</em></p></li>
+<li><p>Remote backup: <a href="https://osf.io/v4rn9/" target="_blank" rel="noopener external nofollow noreferrer">OSF</a></p></li>
+<li><p>Description: GENCODE comprehensive annotation release 24. Downloaded from GENCODE's website.</p></li>
 <li><p>Recipe: <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_24/gencode.v24.annotation.gtf.gz</span><br></pre></td></tr></table></figure></p></li>
-<li>File name: <code>gencode.v24.segmented.tssup1kb.bed.gz</code> (MD5 checksum: <code>972a57431c6209667d5aac41bbb01ebd</code>)</li>
-<li>Local path: <em>/References/Annotations/human/hg38/gencode.v24.segmented.tss<strong>up1kb</strong>.bed.gz</em></li>
-<li>Remote backup: <a href="https://osf.io/ptde7/" target="_blank" rel="noopener external nofollow noreferrer">OSF</a></li>
-<li>Description: Genomic segmentations (promoter, 5_UTR, exon, intron, 3_UTR, and intergenic region) based on GENCODE v24, promoters were defined as upstream 1kb of TSSs (transcripts).</li>
+<li><p>File name: <code>gencode.v24.segmented.tssup1kb.bed.gz</code> (MD5 checksum: <code>972a57431c6209667d5aac41bbb01ebd</code>)</p></li>
+<li><p>Local path: <em>/References/Annotations/human/hg38/gencode.v24.segmented.tss<strong>up1kb</strong>.bed.gz</em></p></li>
+<li><p>Remote backup: <a href="https://osf.io/ptde7/" target="_blank" rel="noopener external nofollow noreferrer">OSF</a></p></li>
+<li><p>Description: Genomic segmentations (promoter, 5_UTR, exon, intron, 3_UTR, and intergenic region) based on GENCODE v24, promoters were defined as upstream 1kb of TSSs (transcripts).</p></li>
 <li><p>Recipe: <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> promoters <span class="keyword">for</span> protein-coding genes</span></span><br><span class="line">zcat gencode.v24.annotation.gtf.gz | \</span><br><span class="line">    awk 'BEGIN&#123;OFS="\t"&#125; $3=="transcript" &#123;print $1,$4-1,$5,$18,"promoter",$7,$14&#125;' | tr -d '";' | \</span><br><span class="line">    awk 'BEGIN&#123;OFS="\t";FS="\t"&#125;&#123;if ($7=="protein_coding")&#123;print $1,$2,$3,$4,$5,$6,$2,$3,"102,194,165"&#125;&#125;' | \</span><br><span class="line">    bedtools flank -i - -g hg38.genome -l 1000 -r 0 -s &gt; promoters_1kb_p.bed</span><br><span class="line"><span class="meta">#</span><span class="bash"> promoters <span class="keyword">for</span> non-protein-coding genes</span></span><br><span class="line">zcat gencode.v24.annotation.gtf.gz | \</span><br><span class="line">    awk 'BEGIN&#123;OFS="\t"&#125; $3=="transcript" &#123;print $1,$4-1,$5,$18,"promoter(NP)",$7,$14&#125;' | tr -d '";' | \</span><br><span class="line">    awk 'BEGIN&#123;OFS="\t";FS="\t"&#125;&#123;if ($7!="protein_coding")&#123;print $1,$2,$3,$4,$5,$6,$2,$3,"102,194,165"&#125;&#125;' | \</span><br><span class="line">    bedtools flank -i - -g hg38.genome -l 1000 -r 0 -s &gt; promoters_1kb_np.bed</span><br></pre></td></tr></table></figure></p></li>
-<li>File name: <code>gencode.v24.segmented.tssflanking500b.bed.gz</code></li>
-<li>Local Path: <em>/References/Anotations/human/hg38/gencode.v24.segmented.tss<strong>flanking500b</strong>.bed.gz</em></li>
-<li>Remote backup: <a href="https://osf.io/4ht6c/" target="_blank" rel="noopener external nofollow noreferrer">OSF</a></li>
-<li>Description: Genomic segmentations based on GENCODE v24, promoters were defined as TSS <span class="math inline">\(\pm\)</span> 500bp (transcripts). (<code>2e624c3bc2330beb81464558ead1a11e</code>)</li>
+<li><p>File name: <code>gencode.v24.segmented.tssflanking500b.bed.gz</code></p></li>
+<li><p>Local Path: <em>/References/Anotations/human/hg38/gencode.v24.segmented.tss<strong>flanking500b</strong>.bed.gz</em></p></li>
+<li><p>Remote backup: <a href="https://osf.io/4ht6c/" target="_blank" rel="noopener external nofollow noreferrer">OSF</a></p></li>
+<li><p>Description: Genomic segmentations based on GENCODE v24, promoters were defined as TSS <span class="math inline">\(\pm\)</span> 500bp (transcripts). (<code>2e624c3bc2330beb81464558ead1a11e</code>)</p></li>
 <li><p>Recipe: <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> promoters <span class="keyword">for</span> protein-coding genes</span></span><br><span class="line">zcat gencode.v24.annotation.gtf.gz | \</span><br><span class="line">    awk 'BEGIN&#123;OFS="\t"&#125; $3=="transcript" &#123;print $1,$4-1,$5,$18,"promoter",$7,$14&#125;' | tr -d '";' | \</span><br><span class="line">    awk 'BEGIN&#123;OFS="\t";FS="\t"&#125;&#123;if ($7=="protein_coding")&#123;print $1,$2,$3,$4,$5,$6,$2,$3,"102,194,165"&#125;&#125;' | \</span><br><span class="line">    bedtools flank -i - -g hg38.genome -l 500 -r 0 -s | \</span><br><span class="line">    bedtools slop -i - -g hg38.genome -l 0 -r 500 -s &gt; promoters_500bp.bed</span><br><span class="line"><span class="meta">#</span><span class="bash"> promoters <span class="keyword">for</span> non-protein-coding genes</span></span><br><span class="line">zcat gencode.v24.annotation.gtf.gz | \</span><br><span class="line">    awk 'BEGIN&#123;OFS="\t"&#125; $3=="transcript" &#123;print $1,$4-1,$5,$18,"promoter(NP)",$7,$14&#125;' | tr -d '";' | \</span><br><span class="line">    awk 'BEGIN&#123;OFS="\t";FS="\t"&#125;&#123;if ($7!="protein_coding")&#123;print $1,$2,$3,$4,$5,$6,$2,$3,"102,194,165"&#125;&#125;' | \</span><br><span class="line">    bedtools flank -i - -g hg38.genome -l 500 -r 0 -s \</span><br><span class="line">    bedtools slop -i - -g hg38.genome -l 0 -r 500 -s &gt; np_promoters_500bp.bed</span><br><span class="line"><span class="meta">#</span><span class="bash"> intergenic</span></span><br><span class="line">zcat gencode.v24.annotation.gtf.gz | \</span><br><span class="line">    awk 'BEGIN&#123;OFS="\t"&#125; $3=="gene" &#123;print $1,$4-1,$5,$10,$16,$7&#125;' | \</span><br><span class="line">    tr -d '";' | \</span><br><span class="line">    bedtools slop -i - -g hg38.genome -l 500 -r 0 -s | \</span><br><span class="line">    sortBed -g ../hg38.genome | \</span><br><span class="line">    bedtools complement -i stdin -g ../hg38.genome | \</span><br><span class="line">    awk 'BEGIN&#123;OFS="\t";FS="\t"&#125;&#123;print $1,$2,$3,".","intergenic",".",$2,$3,"141,160,203"&#125;' &gt; intergenic_500bp.bed</span><br><span class="line"><span class="meta">#</span><span class="bash"> exons</span></span><br><span class="line">zcat gencode.v24.annotation.gtf.gz | \</span><br><span class="line">    awk 'BEGIN&#123;OFS="\t";&#125; $3=="exon" &#123;print $1,$4-1,$5,$18,"exon",$7&#125;' | \</span><br><span class="line">    tr -d '";' | \</span><br><span class="line">    sortBed -g ../hg38.genome | \</span><br><span class="line">    mergeBed -i - -c 4,5,6 -o distinct,distinct,distinct -s | \</span><br><span class="line">    awk 'BEGIN&#123;OFS="\t";FS="\t"&#125;&#123;print $1,$2,$3,$4,$5,$6,$2,$3,"231,138,195"&#125;' &gt; exons.bed</span><br><span class="line"><span class="meta">#</span><span class="bash"> introns</span></span><br><span class="line">zcat gencode.v24.annotation.gtf.gz | \</span><br><span class="line">    awk 'BEGIN&#123;OFS="\t";&#125; $3=="gene" &#123;print $1,$4-1,$5,$16,"intron",$7&#125;' | \</span><br><span class="line">    tr -d '";' | \</span><br><span class="line">    sortBed -g ../hg38.genome | \</span><br><span class="line">    subtractBed -a stdin -b exons.bed | \</span><br><span class="line">    awk 'BEGIN&#123;OFS="\t";FS="\t"&#125;&#123;print $1,$2,$3,$4,$5,$6,$2,$3,"255,217,47"&#125;' &gt; introns.bed</span><br><span class="line"><span class="meta">#</span><span class="bash"> UTR, perl script from https://davetang.org/muse/2012/09/12/gencode/</span></span><br><span class="line">get_35_utr.pl gencode.v24.annotation.gtf.gz | \</span><br><span class="line">    awk 'BEGIN&#123;OFS="\t";FS="\t"&#125;&#123;if ($5=="3_UTR")&#123;print $1,$2,$3,$4,$5,$6,$2,$3,"166,216,84"&#125;else&#123;print $1,$2,$3,$4,$5,$6,$2,$3,"252,141,98"&#125;&#125;' &gt; utr.bed</span><br><span class="line"></span><br><span class="line">cat intergenic_500bp.bed promoters_500bp.bed np_promoters_500bp.bed utr.bed introns.bed exons.bed | sort -k1,1 -k2,2n | bgzip &gt; gencode.v24.segmented.tssflanking500b.bed.gz</span><br></pre></td></tr></table></figure></p></li>
 </ul>
 <h5 id="refgene">RefGene</h5>
@@ -324,51 +320,6 @@
 -->
 
             
-<div class="page-share-wrap">
-    
-
-<div class="page-share" id="pageShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.yaobio.com/posts/collection-of-commonly-used-references-in-bioinformatic-analysis/" rel="external nofollow noreferrer" data-title="Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Collection of commonly used references in bioinformatic analysis》 — Li Yao&url=https://www.yaobio.com/posts/collection-of-commonly-used-references-in-bioinformatic-analysis/&via=https://www.yaobio.com" rel="external nofollow noreferrer" data-title="Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.yaobio.com/posts/collection-of-commonly-used-references-in-bioinformatic-analysis/" rel="external nofollow noreferrer" data-title="Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.yaobio.com/posts/collection-of-commonly-used-references-in-bioinformatic-analysis/&title=《Collection of commonly used references in bioinformatic analysis》 — Li Yao&pic=https://www.yaobio.com/img/profile.png" rel="external nofollow noreferrer" data-title="Weibo">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" rel="external nofollow noreferrer" data-title="WeChat">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.yaobio.com/posts/collection-of-commonly-used-references-in-bioinformatic-analysis/&title=《Collection of commonly used references in bioinformatic analysis》 — Li Yao&source=" rel="external nofollow noreferrer" data-title="QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-    </ul>
- </div>
-
-
-
-    <a href="javascript:;" rel="external nofollow noreferrer" id="shareFab" class="page-share-fab waves-effect waves-circle">
-        <i class="icon icon-share-alt icon-lg"></i>
-    </a>
-</div>
-
 
 
         </div>
@@ -459,59 +410,13 @@
 <a href="javascript:;" rel="external nofollow noreferrer" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
-
-<div class="global-share" id="globalShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.yaobio.com/posts/collection-of-commonly-used-references-in-bioinformatic-analysis/" rel="external nofollow noreferrer" data-title="Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Collection of commonly used references in bioinformatic analysis》 — Li Yao&url=https://www.yaobio.com/posts/collection-of-commonly-used-references-in-bioinformatic-analysis/&via=https://www.yaobio.com" rel="external nofollow noreferrer" data-title="Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.yaobio.com/posts/collection-of-commonly-used-references-in-bioinformatic-analysis/" rel="external nofollow noreferrer" data-title="Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.yaobio.com/posts/collection-of-commonly-used-references-in-bioinformatic-analysis/&title=《Collection of commonly used references in bioinformatic analysis》 — Li Yao&pic=https://www.yaobio.com/img/profile.png" rel="external nofollow noreferrer" data-title="Weibo">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" rel="external nofollow noreferrer" data-title="WeChat">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.yaobio.com/posts/collection-of-commonly-used-references-in-bioinformatic-analysis/&title=《Collection of commonly used references in bioinformatic analysis》 — Li Yao&source=" rel="external nofollow noreferrer" data-title="QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-    </ul>
- </div>
-
-
-<div class="page-modal wx-share" id="wxShare">
-    <a class="close" href="javascript:;" rel="external nofollow noreferrer"><i class="icon icon-close"></i></a>
-    <p>Scan the QR code, and share to WeChat</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADL0lEQVR42u3aS07kUBAEQO5/aWY9gjaZVUZqP8IrRH/seL1I1efjI74+X1xfX3312evv/PrOV/fKv/+GCxsbG/sh7M/Lq31P8vf1Z3/7ObGxsbFPZV8HQ/ueJN6u/5/EWH582NjY2NjXt0ze2d4rP0RsbGxs7Fk4JY2kWfy0rStsbGxs7LZhNGsDJbHXHmjyk9zQS8PGxsZ+e3Y+FX3/v39lvo2NjY39xuzP8trEUt5yaqOrVmBjY2MfxN4UFclnf7uYWT0/NjY29h9g5w2mtjG0j6tN+YSNjY19Eju58abN1A5i82OajQe+qcCwsbGxD2K3zfe7WkV5wdMG7ctXsbGxsQ9izwImD499i+reBR1sbGzs89j1CcXhlMDa4GlXc15+ChsbG/sgdh5gm4Z+8nf+A+QHWgx6sbGxsR/Lnq1dzsa9m2FDsVKZHCU2Njb2QexZWXJdiuTjhDw4N0XOD6NrbGxs7Iez72JsYEl0JQdRHBM2Njb2cezNmk6+ItP+vz2gpJ30X4BhY2NjH83OH3QWKu1ooR0M/3BY2NjY2Iey8+bRfracvD9f9MkHG9jY2NjnsWdN/HYk3MbYXQPj4kmwsbGxj2Mn494ZqV2+aX+M4ZFhY2NjP5adlCLtoHfWhGpHv7My6SOZfmBjY2M/kJ23ivLgSRpJm8WgtoX0clMJGxsb++Hs9qvbV/NDTL45Xy2KCidsbGzsg9h5cbIZ0yaFTTt43vx42NjY2Gew83JiFnKzFtUsGou7Y2NjYx/HTiKhjZZZ5CSRNptjf9NLw8bGxj6CPWvl7wNs1uLfXNjY2Nh/jT0LrVn8bBpMs/EwNjY29tnsdkWmLSdmQ4I8zIrWGDY2NvZx7Hbou4m9ltGu6UQFFTY2NvYR7E27ZxNIbbsqWRsqwg8bGxv7IHbbXp+t0eSPPnvQdiyBjY2NfR57Flp522gz3M3XcfLlIWxsbOxT2Xkw5A2jtvG0WSHKRwXY2NjY2G0Rkrd7ZqXLLFaxsbGx/zI7v/0mlvaxesPKDjY2Nvaj2Hm7ZzMSmBUzs5HDD69iY2NjH8TeD1NnXff2OGbF0mpxBxsbG/vd2f8AuGUhTI8jRFkAAAAASUVORK5CYII=" alt="微信分享二维码">
-</div>
-
-
-
-
     <script src="/js/waves.min.js?v=1.7.2"></script>
 <script src="/js/jquery-1.11.3.min.js?v=1.7.2"></script>
 <script src="/js/es5/tex-mml-chtml.js"></script>
 <script>
     var BLOG = {
         ROOT: '/',
-        SHARE: true,
+        SHARE: false,
         REWARD: false
     };
 
