@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yaobio.com/"/>
-  <updated>2020-08-09T15:58:20.467Z</updated>
+  <updated>2020-08-13T01:37:56.826Z</updated>
   <id>https://www.yaobio.com/</id>
   
   <author>
@@ -17,13 +17,13 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Tricks on IGV</title>
-    <link href="https://www.yaobio.com/posts/tricks-on-igv/"/>
-    <id>https://www.yaobio.com/posts/tricks-on-igv/</id>
+    <title>Tricks of IGV</title>
+    <link href="https://www.yaobio.com/posts/tricks-of-igv/"/>
+    <id>https://www.yaobio.com/posts/tricks-of-igv/</id>
     <published>2020-08-01T23:08:23.000Z</published>
-    <updated>2020-08-09T15:58:20.467Z</updated>
+    <updated>2020-08-13T01:37:56.826Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="generate-screenshots-in-batch">Generate screenshots in batch</h1><h2 id="via-batch-script">Via batch script</h2><h2 id="via-websocket">Via Websocket</h2><h1 id="misc">Misc</h1><h2 id="add-customized-annotations-to-igv">Add customized annotations to IGV</h2><p><code>https://data.broadinstitute.org/igvdata/$$_dataServerRegistry.txt</code></p><h2 id="always-load-bed-files-with-indecies">Always load bed files with indecies</h2><p>If you don't prepare index of a bed file for IGV, then IGV will try to read every interval into the memory and then generate index for them, which means outstanding consumptions of memories and very a long time for computations. So a good practice for visualizing genomic intervals in IGV is that using <code>tabix</code> to generate index for these interval files first, then load them into IGV. Let's say we have an interval bed file <code>test_file_1.bed.gz</code>, it has 18M records, after loading this file into IGV without index, IGV takes more than <strong>25GB</strong> of memory!</p><img src="/posts/tricks-on-igv/igv_without_index.png" class="" title="Without index, IGV takes significant amount of memory"><p>But if you use <code>tabix test_file_1.bed.gz</code> to generate the index first, and then feed IGV with the same file, it only takes <strong>2GB</strong>!</p><img src="/posts/tricks-on-igv/igv_with_index.png" class="" title="With index, IGV takes relatively less memory">]]></content>
+    <content type="html"><![CDATA[<h1 id="generate-screenshots-in-batch">Generate screenshots in batch</h1><h2 id="via-batch-script">Via batch script</h2><h2 id="via-websocket">Via Websocket</h2><h1 id="misc">Misc</h1><h2 id="add-customized-annotations-to-igv">Add customized annotations to IGV</h2><p><code>https://data.broadinstitute.org/igvdata/$$_dataServerRegistry.txt</code></p><h2 id="always-load-bed-files-with-indecies">Always load bed files with indecies</h2><p>If you don't prepare index of a bed file for IGV, then IGV will try to read every interval into the memory and then generate index for them, which means outstanding consumptions of memories and very a long time for computations. So a good practice for visualizing genomic intervals in IGV is that using <code>tabix</code> to generate index for these interval files first, then load them into IGV. Let's say we have an interval bed file <code>test_file_1.bed.gz</code>, it has 18M records, after loading this file into IGV without index, IGV takes more than <strong>25GB</strong> of memory!</p><img src="/posts/tricks-of-igv/igv_without_index.png" class="" title="Without index, IGV takes significant amount of memory"><p>But if you use <code>tabix test_file_1.bed.gz</code> to generate the index first, and then feed IGV with the same file, it only takes <strong>2GB</strong>!</p><img src="/posts/tricks-of-igv/igv_with_index.png" class="" title="With index, IGV takes relatively less memory">]]></content>
     
     <summary type="html">
     
