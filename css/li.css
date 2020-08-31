@@ -141,3 +141,7 @@
 .article-category-list .article-category-list-item {
     margin-right: 10px;
 }
+.post-content p {
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+}
