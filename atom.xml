@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yaobio.com/"/>
-  <updated>2020-08-14T02:46:44.776Z</updated>
+  <updated>2020-09-16T19:38:59.002Z</updated>
   <id>https://www.yaobio.com/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Motif enrichment analysis: clearly explained</title>
+    <link href="https://www.yaobio.com/posts/motif-enrichment-analysis-clearly-explained/"/>
+    <id>https://www.yaobio.com/posts/motif-enrichment-analysis-clearly-explained/</id>
+    <published>2020-09-16T16:42:12.000Z</published>
+    <updated>2020-09-16T19:38:59.002Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="related-terms">Related terms</h1><ul><li>PWM:</li><li>PSSM:</li><li>odds:</li><li>log-odds:</li></ul><h1 id="tools-and-mechanisms">Tools and mechanisms</h1><h2 id="how-to-determine-the-occurrences-of-motifs-in-sequences">How to determine the occurrences of motifs in sequences</h2><h3 id="p-value-based"><span class="math inline">\(p\)</span>-value-based</h3><p>The program computes a log-likelihood ratio score (often referred to incorrectly as a 'log-odds score') for each motif with respect to each sequence position and converts these scores to P-values using dynamic programming (Staden, 1994), assuming a zero-order null model in which sequences are generated at random with user-specified per-letter background frequencies. (default match p-value threshold is 0.0001)</p><p>When sequences are longer than 1kb.</p><h3 id="score-based">Score-based</h3><p>Log odds detection threshold, used to determine bound vs. unbound sites (mandatory) example: 8.059752</p><h2 id="how-to-tell-whether-motifs-are-enriched-or-not-comparing-to-controlbackground-sequences">How to tell whether motifs are enriched or not comparing to control/background sequences</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;related-terms&quot;&gt;Related terms&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;PWM:&lt;/li&gt;
+&lt;li&gt;PSSM:&lt;/li&gt;
+&lt;li&gt;odds:&lt;/li&gt;
+&lt;li&gt;log-odds:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;tools-and-mechan
+      
+    
+    </summary>
+    
+    
+      <category term="posts" scheme="https://www.yaobio.com/posts/"/>
+    
+    
+      <category term="technical_docs" scheme="https://www.yaobio.com/tags/technical-docs/"/>
+    
+      <category term="orientation" scheme="https://www.yaobio.com/tags/orientation/"/>
+    
+  </entry>
   
   <entry>
     <title>Tricks of IGV</title>
