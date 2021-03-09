@@ -1,1 +1,1 @@
-https://s3.amazonaws.com/igv.org.genomes/hg38/hg38_annotations.xml
+https://www.yaobio.com/igv_db/hg38/hg38_annotations.xml
