@@ -21,15 +21,15 @@
     
     
     <meta name="keywords" content="technical_docs,orientation">
-    <meta name="description" content="Related terms  PWM: PSSM: odds: log-odds:  Tools and mechanisms How to determine the occurrences of motifs in sequences \(p\)-value-based The program computes a log-likelihood ratio score (often refer">
+    <meta name="description" content="Related terms  PWM: Position Specific Scoring Matrix (PSSM): odds: log-odds:  How to determine the occurrences of motifs in sequences odds score-based The most straightforward way to draw the conclusi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Motif enrichment analysis: clearly explained">
 <meta property="og:url" content="https://www.yaobio.com/posts/motif-enrichment-analysis-clearly-explained/index.html">
 <meta property="og:site_name" content="Li Yao">
-<meta property="og:description" content="Related terms  PWM: PSSM: odds: log-odds:  Tools and mechanisms How to determine the occurrences of motifs in sequences \(p\)-value-based The program computes a log-likelihood ratio score (often refer">
+<meta property="og:description" content="Related terms  PWM: Position Specific Scoring Matrix (PSSM): odds: log-odds:  How to determine the occurrences of motifs in sequences odds score-based The most straightforward way to draw the conclusi">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-09-16T16:42:12.000Z">
-<meta property="article:modified_time" content="2020-09-16T19:38:59.002Z">
+<meta property="article:modified_time" content="2020-12-12T21:19:26.000Z">
 <meta property="article:author" content="Li Yao">
 <meta property="article:tag" content="technical_docs">
 <meta property="article:tag" content="orientation">
@@ -165,7 +165,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>Table of Content</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#related-terms"><span class="post-toc-number">1.</span> <span class="post-toc-text">Related terms</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tools-and-mechanisms"><span class="post-toc-number">2.</span> <span class="post-toc-text">Tools and mechanisms</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#how-to-determine-the-occurrences-of-motifs-in-sequences"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">How to determine the occurrences of motifs in sequences</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#p-value-based"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">\(p\)-value-based</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#score-based"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">Score-based</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#how-to-tell-whether-motifs-are-enriched-or-not-comparing-to-controlbackground-sequences"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">How to tell whether motifs are enriched or not comparing to control&#x2F;background sequences</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#related-terms"><span class="post-toc-number">1.</span> <span class="post-toc-text">Related terms</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#how-to-determine-the-occurrences-of-motifs-in-sequences"><span class="post-toc-number">2.</span> <span class="post-toc-text">How to determine the occurrences of motifs in sequences</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#odds-score-based"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">odds score-based</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#p-value-based"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">\(p\)-value-based</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#how-to-tell-whether-motifs-are-enriched-or-not-comparing-to-control-background-sequences"><span class="post-toc-number">3.</span> <span class="post-toc-text">How to tell whether motifs are enriched or not comparing to control (background) sequences</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#detext-novo-motif-discovery"><span class="post-toc-number">4.</span> <span class="post-toc-text">\(de\text{ }novo\) motif discovery</span></a></li></ol>
         </nav>
     </aside>
 
@@ -192,18 +192,19 @@
             <h1 id="related-terms">Related terms</h1>
 <ul>
 <li>PWM:</li>
-<li>PSSM:</li>
+<li>Position Specific Scoring Matrix (PSSM):</li>
 <li>odds:</li>
 <li>log-odds:</li>
 </ul>
-<h1 id="tools-and-mechanisms">Tools and mechanisms</h1>
-<h2 id="how-to-determine-the-occurrences-of-motifs-in-sequences">How to determine the occurrences of motifs in sequences</h2>
-<h3 id="p-value-based"><span class="math inline">\(p\)</span>-value-based</h3>
+<h1 id="how-to-determine-the-occurrences-of-motifs-in-sequences">How to determine the occurrences of motifs in sequences</h1>
+<h2 id="odds-score-based">odds score-based</h2>
+<p>The most straightforward way to draw the conclusion is to use the odds scores (usually in log scale) calcuclated using the PSSM. Log odds detection threshold, used to determine bound vs. unbound sites (mandatory) example: 8.059752</p>
+<h2 id="p-value-based"><span class="math inline">\(p\)</span>-value-based</h2>
+<p>The <span class="math inline">\(p\)</span>-value of a match for a <span class="math inline">\(k\)</span>-mer <span class="math inline">\(x\)</span> is the probability of obtaining the same or better log-odds score <span class="math inline">\(S(x)\)</span> with the PWM on a random/control sequence: <span class="math display">\[p\text{-value}(x)=\sum\limits_{S(z)\ge S(x)}P_{bg}(z),\]</span> where <span class="math inline">\(P_{bg}(z)\)</span> denotes the probability to observe <span class="math inline">\(z\)</span> according to the background model.</p>
 <p>The program computes a log-likelihood ratio score (often referred to incorrectly as a 'log-odds score') for each motif with respect to each sequence position and converts these scores to P-values using dynamic programming (Staden, 1994), assuming a zero-order null model in which sequences are generated at random with user-specified per-letter background frequencies. (default match p-value threshold is 0.0001)</p>
 <p>When sequences are longer than 1kb.</p>
-<h3 id="score-based">Score-based</h3>
-<p>Log odds detection threshold, used to determine bound vs. unbound sites (mandatory) example: 8.059752</p>
-<h2 id="how-to-tell-whether-motifs-are-enriched-or-not-comparing-to-controlbackground-sequences">How to tell whether motifs are enriched or not comparing to control/background sequences</h2>
+<h1 id="how-to-tell-whether-motifs-are-enriched-or-not-comparing-to-control-background-sequences">How to tell whether motifs are enriched or not comparing to control (background) sequences</h1>
+<h1 id="detext-novo-motif-discovery"><span class="math inline">\(de\text{ }novo\)</span> motif discovery</h1>
 
         </div>
 
@@ -212,7 +213,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2020-09-16T19:38:59.002Z" itemprop="dateUpdated">2020-09-16 15:38:59</time>
+    Last updated: <time datetime="2020-12-12T21:19:26.000Z" itemprop="dateUpdated">2020-12-12 16:19:26</time>
 </span><br>
 
 
@@ -244,7 +245,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/tools/pints-and-pints-web-portal/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">PINTS and PINTS web portal</h4>
+      </a>
+    </div>
   
 
   
@@ -316,7 +324,7 @@
         </p>
     </div>
     <div class="bottom">
-        <p><span>Li Yao &copy; 2019 - 2020</span>
+        <p><span>Li Yao &copy; 2019 - 2021</span>
             <span>
                 
                 Modified from indigo.
