@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>BioQueue | Li Yao | Reseach | Technique | Life</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="BioQueue is a researcher-facing platform preferentially to improve the efficiency and robustness of analysis in bioinformatics research. In this post, details about how BioQueue tries to achieve these">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BioQueue">
+<meta property="og:url" content="https://www.yaobio.com/tools/bioqueue/index.html">
+<meta property="og:site_name" content="Li Yao">
+<meta property="og:description" content="BioQueue is a researcher-facing platform preferentially to improve the efficiency and robustness of analysis in bioinformatics research. In this post, details about how BioQueue tries to achieve these">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.yaobio.com/tools/bioqueue/example_protocol.png">
+<meta property="og:image" content="https://www.yaobio.com/tools/bioqueue/benchmark.png">
+<meta property="og:image" content="https://www.yaobio.com/tools/bioqueue/changed_io.png">
+<meta property="og:image" content="https://www.yaobio.com/tools/bioqueue/changed_protocol.png">
+<meta property="article:published_time" content="2017-11-22T16:40:40.000Z">
+<meta property="article:modified_time" content="2021-07-01T01:04:28.530Z">
+<meta property="article:author" content="Li Yao">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.yaobio.com/tools/bioqueue/example_protocol.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Li Yao" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <link rel="stylesheet" href="/css/li.css?v=1.7.2">
+    <link rel="stylesheet" href="/css/timeline.css?v=1.7.2">
+    <!-- Timeline CSS -->
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+    <div class="inner flex-row-vertical">
+        <a href="javascript:;" rel="external nofollow noreferrer" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+            <i class="icon icon-lg icon-close"></i>
+        </a>
+        <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+            <div class="brand">
+                <a href="/" class="avatar waves-effect waves-circle waves-light">
+                    <img src="/img/profile.png">
+                </a>
+                <hgroup class="introduce">
+                    <h5 class="nickname">
+                        Li Yao
+                    </h5>
+                </hgroup>
+            </div>
+        </div>
+        <div class="scroll-wrap flex-col">
+            <ul class="nav">
+            
+                <li class="waves-block waves-effect">
+                    <a href="/" >
+                        <i class="icon icon-lg icon-home"></i>
+                        Home
+                    </a>
+                </li>
+            
+                <li class="waves-block waves-effect">
+                    <a href="/projects" >
+                        <i class="icon icon-lg icon-tasks"></i>
+                        Projects
+                    </a>
+                </li>
+            
+                <li class="waves-block waves-effect">
+                    <a href="/publications" >
+                        <i class="icon icon-lg icon-book"></i>
+                        Publications
+                    </a>
+                </li>
+            
+                <li class="waves-block waves-effect active">
+                    <a href="/tools" >
+                        <i class="icon icon-lg icon-rocket"></i>
+                        Tools
+                    </a>
+                </li>
+            
+                <li class="waves-block waves-effect">
+                    <a href="/posts" >
+                        <i class="icon icon-lg icon-archives"></i>
+                        Posts
+                    </a>
+                </li>
+            
+            </ul>
+        </div>
+    </div>
+</aside>
+    <main id="main">
+        <div class="uni-header">
+    <header class="top-header" id="header">
+        <div class="flex-row">
+            <a href="javascript:;" rel="external nofollow noreferrer" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+                <i class="icon icon-lg icon-navicon"></i>
+            </a>
+            <div class="flex-col header-title ellipsis">BioQueue</div>
+            
+            <div class="search-wrap" id="search-wrap">
+                <a href="javascript:;" rel="external nofollow noreferrer" class="header-icon waves-effect waves-circle waves-light" id="back">
+                    <i class="icon icon-lg icon-chevron-left"></i>
+                </a>
+                <input type="text" id="key" class="search-input" autocomplete="off"
+                    placeholder="Search">
+                <a href="javascript:;" rel="external nofollow noreferrer" class="header-icon waves-effect waves-circle waves-light" id="search">
+                    <i class="icon icon-lg icon-search"></i>
+                </a>
+            </div>
+            
+            
+        </div>
+    </header>
+    <header class="content-header post-header">
+
+        <div class="container fade-scale">
+            <h1 class="title">BioQueue</h1>
+            <h5 class="subtitle">
+                
+                <time datetime="2017-11-22T16:40:40.000Z" itemprop="datePublished" class="page-time">
+  2017-11-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/tools/">tools</a></li></ul>
+
+                
+            </h5>
+        </div>
+
+        
+
+
+    </header>
+    
+        
+            <img aria-hidden="true" class="bkg-img" src="/assets/showcases/bioqueue.png">
+        
+    
+</div>
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>Table of Content</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#speeding-up-analysis"><span class="post-toc-number">1.</span> <span class="post-toc-text">Speeding up analysis</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#protecting-the-integrity-of-results"><span class="post-toc-number">2.</span> <span class="post-toc-text">Protecting the integrity of results</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#other-handy-functions"><span class="post-toc-number">3.</span> <span class="post-toc-text">Other handy functions</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-bioqueue"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">BioQueue</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-11-22 11:40:40" datetime="2017-11-22T16:40:40.000Z"  itemprop="datePublished">2017-11-22</time>
+
+            
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>BioQueue is a researcher-facing platform preferentially to improve the <strong>efficiency</strong> and <strong>robustness</strong> of analysis in bioinformatics research. In this post, details about how BioQueue tries to achieve these two goals are explained.</p>
+<h2 id="speeding-up-analysis">Speeding up analysis</h2>
+<p>BioQueue organizes analysis workflows as <em>protocols</em>, which are composed of continuous <em>step</em>s. For example, to quantify the expression of genes from RNA-seq samples, we can use the workflow from (Pertea <em>et al.</em>, 2016); in BioQueue, it can be expressed as follows:</p>
+<img src="/tools/bioqueue/example_protocol.png" class="" title="An example protocol which uses HISAT2 to align RNA-seq reads back to the reference genome, and then uses stringtie to quantify the expression level of genes and transcripts.">
+<p>Limited by the design of software or the system resources, many currently available tools cannot fully use the system resources allotted to them or may not achieve excellent efficiency and can even generate errors (such as memory overflow) when running multiple jobs simultaneously. When running each step, BioQueue monitors the actual resources (CPU, peak memory usage, and disk usage) that a step occupies and predicts future resources usage for this step from collected data. It then uses a greedy-algorithm-based dispatcher to arrange the execution order of multiple jobs to ensure the maximum usage of resources and thus speed up the overall efficiency of analysis. For analyzing the same set of data with the identical pipeline, BioQueue can save up to 46% of the required time (boosting rates vary depending on protocols).</p>
+<img src="/tools/bioqueue/benchmark.png" class="" title="Benchmark result suggests that BioQueue can boost the efficiency of analysis">
+<h2 id="protecting-the-integrity-of-results">Protecting the integrity of results</h2>
+<p>To protect the integrity of analysis results from human errors (like overwriting a result file by accident), BioQueue actively scans the changes on the inputs and outputs that jobs depend and produce. If <em>files are changed after the job is finished</em>, a color indication (red) will be added to the corresponding job cards.</p>
+<img src="/tools/bioqueue/changed_io.png" class="" title="Benchmark result suggests that BioQueue can boost the efficiency of analysis">
+<p>Another common situation is that after a specific period, you may need to rerun the same analysis for different reasons (like you want to test the reproducibility of the results). BioQueue keeps track of the versions of protocols that jobs used, and if a job is not generated with the latest protocol, another color indication (yellow) will be added to the job cards warning that rerun the job may yield inconsistent results.</p>
+<img src="/tools/bioqueue/changed_protocol.png" class="" title="Benchmark result suggests that BioQueue can boost the efficiency of analysis">
+<p>BioQueue also supports achieving job files and backup them to a different destination to prevent the effect of disk failure.</p>
+<h2 id="other-handy-functions">Other handy functions</h2>
+<ul>
+<li>Steps can be executed in different conda/venv environments so that you can handle dependencies that different tools/software requires with ease;</li>
+<li>BioQueue provides a registry of biosamples, and automatically associates jobs with registered samples;</li>
+<li>BioQueue has two types of account groups: worker (with read and write permission) and viewer (read only). You can create viewer accounts and share the account info with your partners, they will be able to download files, and you don't need to worry about jobs' safety.</li>
+</ul>
+<p>Useful links:</p>
+<ul>
+<li><a href="https://doi.org/10.1093/bioinformatics/btx403" target="_blank" rel="noopener external nofollow noreferrer">Original paper</a></li>
+<li><a href="https://github.com/liyao001/BioQueue" target="_blank" rel="noopener external nofollow noreferrer">GitHub repo</a></li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2021-07-01T01:04:28.530Z" itemprop="dateUpdated">2021-06-30 21:04:28</time>
+</span><br>
+
+
+        
+        This article is posted in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. <br> Permanent link to this post: <a href="/tools/bioqueue/" target="_blank" rel="external">https://www.yaobio.com/tools/bioqueue/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://www.yaobio.com">
+            <img src="/img/profile.png" alt="Li Yao">
+            Li Yao
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            <!---->
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/update/rna-editing-plus/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">RNA Editing Plus</h4>
+      </a>
+    </div>
+  
+
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'yaobio';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener external nofollow noreferrer">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This website is licensed under a <a rel="license noopener external nofollow noreferrer" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Li Yao &copy; 2019 - 2021</span>
+            <span>
+                
+                Modified from indigo.
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" rel="external nofollow noreferrer" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="/js/waves.min.js?v=1.7.2"></script>
+<script src="/js/jquery-1.11.3.min.js?v=1.7.2"></script>
+<script src="/js/es5/tex-mml-chtml.js"></script>
+<script>
+    var BLOG = {
+        ROOT: '/',
+        SHARE: false,
+        REWARD: false
+    };
+
+    
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+<script src="/js/timeline.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<!--<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>-->
+
+<script>
+    $('.pub-updates').click(function(){
+        $('#shared-modal .modal-body').html($(this).data('msg'));
+        $('#shared-modal').modal();
+        return false;
+    });
+    var pub_years = [];
+    $(".publication").each(function(){
+        pub_years.push($(this).data("pub-date"));
+    });
+    let u_pub_years = [...new Set(pub_years)];
+    u_pub_years.sort();
+    u_pub_years.reverse();
+    let y_len = u_pub_years.length;
+    for (i = 0; i < y_len; i++) {
+        let st = " ";
+        if (i==0){
+            st += 'class="selected"';
+        }
+        $("#publication-timeline .events ol").append('<li><a href="#'+i+'" data-date="'+u_pub_years[i]+'"'+st+'>'+u_pub_years[i]+'</a></li>');
+    }
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
