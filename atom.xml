@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yaobio.com/"/>
-  <updated>2021-06-24T11:18:58.802Z</updated>
+  <updated>2021-06-23T03:41:06.000Z</updated>
   <id>https://www.yaobio.com/</id>
   
   <author>
@@ -15,31 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Enhancer biology</title>
-    <link href="https://www.yaobio.com/projects/enhancer-biology/"/>
-    <id>https://www.yaobio.com/projects/enhancer-biology/</id>
-    <published>2021-06-24T11:11:09.000Z</published>
-    <updated>2021-06-24T11:18:58.802Z</updated>
-    
-    <content type="html"><![CDATA[<p>It's fundamental in bioinformatics that how should we organize and analyze data to maximize efficiency and reproducibility</p><h1 id="infrastructure">Infrastructure</h1><h1 id="references">References</h1><p>Many tools require genome-related assets</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;It&#39;s fundamental in bioinformatics that how should we organize and analyze data to maximize efficiency and reproducibility&lt;/p&gt;
-&lt;h1 id=&quot;in
-      
-    
-    </summary>
-    
-    
-      <category term="projects" scheme="https://www.yaobio.com/projects/"/>
-    
-    
-  </entry>
   
   <entry>
     <title>PINTS and PINTS web portal</title>
