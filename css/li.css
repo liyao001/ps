@@ -219,3 +219,19 @@
 	0% {transform:translateX(-100%);}
     33%, 100% {transform:translateX(100%);}
 }
+
+.post-content li {
+    line-height: 1.6em;
+}
+.post-content ul li::before {
+    content: "\00B7";
+    color: #999;
+    font-size: 20px;
+    margin-left: -4px;
+    padding-right: 2px;
+    vertical-align: middle;
+    text-align: left;
+}
+.post-content ul li:hover::before {
+    color: #eb5424;
+}
