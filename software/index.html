@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Software</title>
+    <link type="text/css" href="/assets/css/796.73088b498cbaa1fd5906.css" rel="stylesheet" />
+<link type="text/css" href="/assets/css/212.5830dd80db2577f64f25.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container-fluid nav-container">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg bg-transparent top-nav">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Li Yao</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/publications/">Publications</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/software/">Software</a>
+                        </li>
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link " href="#">Posts</a>-->
+<!--                        </li>-->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="header-container top-bg bg-software position-relativem mb-4" id="softwareHeader">
+    <div class="container position-relative z-1">
+        <div class="row text-start glass" >
+            <h1 class="display-1">Software</h1>
+            <p class="lead">Software and tools for driving scientific discoveries.</p>
+        </div>
+    </div>
+    <canvas id="matrixCanvas" class="position-absolute"></canvas>
+</div>
+<div class="container">
+    
+    <div class="row mt-0" data-aos="fade-up">
+        <div class="card mb-3 py-3 software-card">
+            <div class="row g-0 align-items-center">
+                
+                <div class="col-lg-2 software-logo-in-list">
+                    <img src="/assets/vendors/images/DeepDETAILS.png" class="img-fluid rounded mx-auto d-block" alt="...">
+                </div>
+                <div class="col-lg-10">
+                    <div class="card-body">
+                        <h5 class="card-title software-title">
+                            <a href="#"
+                               class="icon-link icon-link-hover link-underline link-underline-opacity-0">
+                                DEconvolution of Tissue profiles with Accurate Interpretation of Locus-specific Signals (DeepDETAILS)
+                            </a>
+                        </h5>
+                        <p class="card-text"><p>DeepDETAILS is a novel deep-learning framework that reconstructs cell-type-specific genomic signals from bulk tissue data with base-pair precision. Its core innovation is the use of readily available single-cell ATAC-seq data as a reference to deconvolve various other genomic datasets, such as those from nascent transcript sequencing or ChIP-seq.</p></p>
+                            <ul class="list-inline mb-0 software-list">
+                                <li class="list-inline-item">Links: </li>
+                                
+                                <li class="list-inline-item">
+                                    <a href="https://anaconda.org/bioconda/deepdetails"
+                                    rel="external nofollow"
+                                    class="text-body-secondary icon-link icon-link-hover package-link link-underline link-underline-opacity-0"
+                                    target="_blank">
+                                        <i class="bi fa-solid fa-box-open"></i> Compiled package
+                                    </a>
+                                </li>
+                                
+                                
+                                
+                                <li class="list-inline-item">
+                                    <a href="https://github.com/liyao001/DeepDETAILS"
+                                    rel="external nofollow" 
+                                    class="text-body-secondary icon-link icon-link-hover source-code-link link-underline link-underline-opacity-0"
+                                    target="_blank">
+                                        <i class="bi fa-solid fa-code"></i> Source code
+                                    </a>
+                                </li>
+                                
+                                
+                                <li class="list-inline-item">
+                                    <a href="https://details.yulab.org/"
+                                    rel="external nofollow" 
+                                    class="text-body-secondary icon-link icon-link-hover web-serv-link link-underline link-underline-opacity-0"
+                                    target="_blank">
+                                        <i class="bi fa-solid fa-cloud"></i> Web service / Resources
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-0" data-aos="fade-up">
+        <div class="card mb-3 py-3 software-card">
+            <div class="row g-0 align-items-center">
+                
+                <div class="col-lg-2 software-logo-in-list">
+                    <img src="/assets/vendors/images/pints_logo.png" class="img-fluid rounded mx-auto d-block" alt="...">
+                </div>
+                <div class="col-lg-10">
+                    <div class="card-body">
+                        <h5 class="card-title software-title">
+                            <a href="/software/pints-and-pints-web-portal/"
+                               class="icon-link icon-link-hover link-underline link-underline-opacity-0">
+                                Peak Identifier for Nascent Transcript Starts (PINTS)
+                            </a>
+                        </h5>
+                        <p class="card-text"><p>Peak Identifier for Nascent Transcript Starts (PINTS) is a software that helps locate potential regulatory elements (promoters and enhancers) genome-wide from nascent transcript sequencing data, like GRO/PRO-cap libraries, which are specifically enriched for signals from transcription start sites (TSSs). PINTS web portal is a comprehensive catalog of promoters and enhancers, and all have support from transcriptional evidence. Besides the catalog database, the portal also allows users to upload their genomic loci of interest and analyze the loci with state-of-the-art annotations. The portal is a containerized web service powered by Django, celery, and other open-source packages.</p></p>
+                            <ul class="list-inline mb-0 software-list">
+                                <li class="list-inline-item">Links: </li>
+                                
+                                <li class="list-inline-item">
+                                    <a href="https://pypi.org/project/pyPINTS/"
+                                    rel="external nofollow"
+                                    class="text-body-secondary icon-link icon-link-hover package-link link-underline link-underline-opacity-0"
+                                    target="_blank">
+                                        <i class="bi fa-solid fa-box-open"></i> Compiled package
+                                    </a>
+                                </li>
+                                
+                                
+                                
+                                <li class="list-inline-item">
+                                    <a href="https://github.com/liyao001/PINTS"
+                                    rel="external nofollow" 
+                                    class="text-body-secondary icon-link icon-link-hover source-code-link link-underline link-underline-opacity-0"
+                                    target="_blank">
+                                        <i class="bi fa-solid fa-code"></i> Source code
+                                    </a>
+                                </li>
+                                
+                                
+                                <li class="list-inline-item">
+                                    <a href="https://pints.yulab.org/"
+                                    rel="external nofollow" 
+                                    class="text-body-secondary icon-link icon-link-hover web-serv-link link-underline link-underline-opacity-0"
+                                    target="_blank">
+                                        <i class="bi fa-solid fa-cloud"></i> Web service / Resources
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-0" data-aos="fade-up">
+        <div class="card mb-3 py-3 software-card">
+            <div class="row g-0 align-items-center">
+                
+                <div class="col-lg-2 software-logo-in-list">
+                    <img src="/assets/vendors/images/biosyntax.png" class="img-fluid rounded mx-auto d-block" alt="...">
+                </div>
+                <div class="col-lg-10">
+                    <div class="card-body">
+                        <h5 class="card-title software-title">
+                            <a href="https://biosyntax.org/"
+                               class="icon-link icon-link-hover link-underline link-underline-opacity-0">
+                                bioSyntax
+                            </a>
+                        </h5>
+                        <p class="card-text"><p>bioSyntax is a tool designed to simplify the inspection of biological sequences, regions, and alignments. It is compatible with multiple text editors such as vim, VS Code, sublime, less, and gedit.</p></p>
+                            <ul class="list-inline mb-0 software-list">
+                                <li class="list-inline-item">Links: </li>
+                                
+                                <li class="list-inline-item">
+                                    <a href="https://marketplace.visualstudio.com/items?itemName=reageyao.biosyntax"
+                                    rel="external nofollow"
+                                    class="text-body-secondary icon-link icon-link-hover package-link link-underline link-underline-opacity-0"
+                                    target="_blank">
+                                        <i class="bi fa-solid fa-box-open"></i> Compiled package
+                                    </a>
+                                </li>
+                                
+                                
+                                
+                                <li class="list-inline-item">
+                                    <a href="https://github.com/bioSyntax/bioSyntax"
+                                    rel="external nofollow" 
+                                    class="text-body-secondary icon-link icon-link-hover source-code-link link-underline link-underline-opacity-0"
+                                    target="_blank">
+                                        <i class="bi fa-solid fa-code"></i> Source code
+                                    </a>
+                                </li>
+                                
+                                
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-0" data-aos="fade-up">
+        <div class="card mb-3 py-3 software-card">
+            <div class="row g-0 align-items-center">
+                
+                <div class="col-lg-2 software-logo-in-list">
+                    <img src="/assets/vendors/images/bioqueue.png" class="img-fluid rounded mx-auto d-block" alt="...">
+                </div>
+                <div class="col-lg-10">
+                    <div class="card-body">
+                        <h5 class="card-title software-title">
+                            <a href="https://www.bioqueue.org/"
+                               class="icon-link icon-link-hover link-underline link-underline-opacity-0">
+                                BioQueue
+                            </a>
+                        </h5>
+                        <p class="card-text"><p>BioQueue is a researcher-facing platform preferentially to improve the efficiency and robustness of analysis in bioinformatics research.</p></p>
+                            <ul class="list-inline mb-0 software-list">
+                                <li class="list-inline-item">Links: </li>
+                                
+                                
+                                
+                                <li class="list-inline-item">
+                                    <a href="https://github.com/liyao001/BioQueue"
+                                    rel="external nofollow" 
+                                    class="text-body-secondary icon-link icon-link-hover source-code-link link-underline link-underline-opacity-0"
+                                    target="_blank">
+                                        <i class="bi fa-solid fa-code"></i> Source code
+                                    </a>
+                                </li>
+                                
+                                
+                                <li class="list-inline-item">
+                                    <a href="https://open.bioqueue.org/"
+                                    rel="external nofollow" 
+                                    class="text-body-secondary icon-link icon-link-hover web-serv-link link-underline link-underline-opacity-0"
+                                    target="_blank">
+                                        <i class="bi fa-solid fa-cloud"></i> Web service / Resources
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid foot-container my-3">
+    <div class="container pt-3 text-center">
+        <ul class="list-inline">
+            <li class="list-inline-item">My pages at other platforms:</li>
+            <li class="list-inline-item">
+                <a href="https://orcid.org/0000-0003-2827-8824" rel="external nofollow" class="icon-link icon-link-hover icon-link-orcid link-underline link-underline-opacity-0" target="_blank"><i class="bi fa-brands fa-orcid"></i> ORCID</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://scholar.google.com/citations?hl=en&user=CBFQNG0AAAAJ" rel="external nofollow" class="icon-link icon-link-hover icon-link-gs link-underline link-underline-opacity-0" target="_blank"><i class="bi fa-brands fa-google-scholar"></i> Google Scholar</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://github.com/liyao001" rel="external nofollow" class="icon-link icon-link-hover icon-link-gh link-underline link-underline-opacity-0" target="_blank"><i class="bi fa-brands fa-github"></i> GitHub</a>
+            </li>
+        </ul>
+        &copy; Li Yao 2019-2025.
+    </div>
+</div>
+<script src="/assets/vendors/js/three.min.js"></script>
+
+
+<script type="text/javascript" src="/assets/js/runtime.e2987ff7.js" charset="UTF-8"></script>
+<script type="text/javascript" src="/assets/js/software.1ebd402d.js" charset="UTF-8"></script>
+
+</body>
+</html>

@@ -1,0 +1,512 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Peak Identifier for Nascent Transcript Starts - Li Yao</title>
+    <link type="text/css" href="/assets/css/796.73088b498cbaa1fd5906.css" rel="stylesheet" />
+<link type="text/css" href="/assets/css/212.5830dd80db2577f64f25.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container-fluid nav-container">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg bg-transparent top-nav">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Li Yao</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/publications/">Publications</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/software/">Software</a>
+                        </li>
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link " href="#">Posts</a>-->
+<!--                        </li>-->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="header-container content-header" id="">
+    <div class="visually-hidden">
+        <h1 class="display-1">Peak Identifier for Nascent Transcript Starts </h1>
+        <p class="lead">&lt;p&gt;Peak Identifier for Nascent Transcript Starts (PINTS) is a software that helps locate potential regulatory elements (promoters and enhancers) genome-wide from nascent transcript sequencing data, like GRO/PRO-cap libraries, which are specifically enriched for signals from transcription start sites (TSSs). PINTS web portal is a comprehensive catalog of promoters and enhancers, and all have support from transcriptional evidence. Besides the catalog database, the portal also allows users to upload their genomic loci of interest and analyze the loci with state-of-the-art annotations. The portal is a containerized web service powered by Django, celery, and other open-source packages.&lt;/p&gt;</p>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 default-content-container card" data-bs-spy="scroll" data-bs-target="#tocSidebar">
+            <div class="card-body">
+                <h1>Peak Identifier for Nascent Transcript Starts</h1>
+                <small>Release time: 2021 - Updated: May 12, 2025, 11:34 a.m.</small>
+                <hr class="d-none d-md-block my-2">
+                
+                <div class="mt-4">
+                    <object data="/assets/vendors/images/pints_intro.svg" width="50%" class="mx-auto d-block"></object>
+                </div>
+                
+                <blockquote>
+<p>If you are interested in the detailed methodology, please refer to our manuscript, <em><a href="../../../../../publication/a-comparison-of-experimental-assays-and-analytical-methods-for-genome-wide-identification-of-active-enhancers/" title="A comparison of experimental assays and analytical methods for genome-wide identification of active enhancers">A comparison of experimental assays and analytical methods for genome-wide identification of active enhancers</a></em>, for more information.</p>
+</blockquote>
+<h2 id="toc_summary">Summary</h2>
+<p><strong>P</strong>eak <strong>I</strong>dentifier for <strong>N</strong>ascent <strong>T</strong>ranscript <strong>S</strong>tarts (PINTS) is a software that helps locate potential regulatory elements (promoters and enhancers) genome-wide from nascent transcript sequencing data, like GRO/PRO-cap libraries, which are specifically enriched for signals from <strong>t</strong>ranscription <strong>s</strong>tart <strong>s</strong>ites (TSSs).</p>
+<p>PINTS web portal is a comprehensive catalog of promoters and enhancers, and all have support from transcriptional evidence. Besides the catalog database, the portal also allows users to upload their genomic loci of interest and analyze the loci with state-of-the-art annotations. The portal is a containerized web service powered by Django, celery, and other open-source packages.</p>
+<h2 id="toc_availability">Availability</h2>
+<p>PINTS executable files are packed and distributed on both <a href="https://pypi.org/project/pyPINTS/" rel="noopener external nofollow noreferrer" target="_blank">PyPI</a> and <a href="https://bioconda.github.io/recipes/pypints/README.html#package-pypints" rel="noopener external nofollow noreferrer" target="_blank">bioconda</a>. You can install PINTS like any other standard Python package with <a href="https://pip.pypa.io/en/stable/" rel="noopener external nofollow noreferrer" target="_blank">pip</a> (<code>pip install pyPINTS</code>) or <a href="https://docs.conda.io/en/latest/" rel="noopener external nofollow noreferrer" target="_blank">conda</a> (<code>conda install -c bioconda pypints</code>). The source code is available on <a href="https://github.com/hyulab/pints" rel="noopener external nofollow noreferrer" target="_blank">GitHub</a>.</p>
+<p>PINTS web portal is freely accessible at <a href="https://pints.yulab.org/" rel="noopener external nofollow noreferrer" target="_blank">pints.yulab.org</a>.</p>
+<h2 id="toc_changelog">Changelog</h2>
+<h3 id="toc_pints">PINTS</h3>
+<h4 id="toc_1-2-0">1.2.0</h4>
+<p>Release date: 2025-05-10</p>
+<ul>
+<li><strong>[Changed]</strong>: <span class="ws-pre-wrap f5 wb-break-word text-mono prc-Text-Text-0ima0">PINTS now includes signals from all chromosomes by default, irrespective of their naming convention. This change (addressing issue <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-hovercard-type="issue" data-hovercard-url="/hyulab/PINTS/issues/26/hovercard" data-id="3006454202" data-permission-text="Title is private" data-url="https://github.com/hyulab/PINTS/issues/26" href="https://github.com/hyulab/PINTS/issues/26">#26</a>) enhances support for diverse genomic datasets, such as plant genomes which often utilize different naming schemes. To revert to the previous behavior of analyzing only chromosomes starting with "chr", use the <code>--chromosome-start-with chr</code> flag.</span></li>
+<li><span class="ws-pre-wrap f5 wb-break-word text-mono prc-Text-Text-0ima0"><span class="ws-pre-wrap extended-commit-description-container f6 wb-break-word text-mono mt-2 prc-Text-Text-0ima0"><strong>[Changed]</strong>: For experiments with replicates, PINTS now automatically merges these replicates and performs peak calling on the combined signal. Users wishing to perform separate peak calls on individual replicates (the previous method) can specify the `--dont-merge-reps` option. </span></span></li>
+<li><span class="ws-pre-wrap f5 wb-break-word text-mono prc-Text-Text-0ima0"><span class="ws-pre-wrap extended-commit-description-container f6 wb-break-word text-mono mt-2 prc-Text-Text-0ima0"><strong>[Added]</strong>: PINTS can act in a more sensitive mode (LRT+FC). To utilize the mode, please specify the `--sensitive` flag can be used.</span></span></li>
+<li><span class="ws-pre-wrap f5 wb-break-word text-mono prc-Text-Text-0ima0"><span class="ws-pre-wrap extended-commit-description-container f6 wb-break-word text-mono mt-2 prc-Text-Text-0ima0"><strong>[Changed]</strong>: The description of PINTS has been updated across its various files.</span></span></li>
+</ul>
+<h4 id="toc_1-1-15">1.1.15</h4>
+<p>Release date: 2024-12-22</p>
+<ul>
+<li><strong>[Fixed]</strong>: PINTS (boundary extender) may quit when warnings are threw in third-party libraries.</li>
+</ul>
+<h4 id="toc_1-1-14">1.1.14</h4>
+<p>Release date: 2024-10-10</p>
+<ul>
+<li><strong>[Fixed]</strong>: some csi index files not deleted after the entire peak calling process (related to ver<a href="#toc_1-1-1-2">1.1.12</a>).</li>
+</ul>
+<h4 id="toc_1-1-13">1.1.13</h4>
+<p>Release date: 2024-09-09</p>
+<ul>
+<li><strong>[Fixed]</strong>: PINTS may quit in cases where the sets of chromosomes in the forward and reverse bigwigs are not 100% identical</li>
+</ul>
+<h4 id="toc_1-1-12">1.1.12</h4>
+<p>Release date: 2024-07-21</p>
+<ul>
+<li><strong>[Changed]</strong>: improved IO performance by up to ~40% when working with bigWig inputs</li>
+<li><strong>[Changed]</strong>: years in comments</li>
+<li><strong>[Added]</strong>: pints_counter for generating count matrix</li>
+<li><strong>[Fixing]</strong>: switched to csi index for better handling of large chromosomes. But more tests regarding memory pressure are needed</li>
+<li><strong>[Fixed]</strong>: csi index files not deleted after the entire peak calling process</li>
+</ul>
+<h4 id="toc_1-1-11">1.1.11</h4>
+<p>Skipped</p>
+<h4 id="toc_1-1-10">1.1.10</h4>
+<p>Release date: 2023-11-07</p>
+<ul>
+<li><strong>[Changed]</strong>: Removed warning filters in extension_engine as warnings from other packages may break downstream analysis.</li>
+<li><strong>[Changed]</strong>: years in comments</li>
+</ul>
+<h4 id="toc_1-1-9">1.1.9</h4>
+<p>Release date: 2023-05-11</p>
+<ul>
+<li><strong>[Added]</strong>: A new QC script for evaluating TSS enrichment (over gene body regions)</li>
+<li><strong>[Changed]</strong>: Report scale factors when using <code>pints_visualizer</code></li>
+<li><strong>[Changed]</strong>: Switched <code>formatter_class</code> for all executable scripts’ argument parsers from <code>HelpFormatter</code> to <code>ArgumentDefaultsHelpFormatter</code>, so that default values will be printed when running commands like <code>pints_caller --help</code></li>
+<li><strong>[Fixed]</strong>: Added boundary caps to avoid <code>ValueError</code> when calling <code>pysam.TabixFile.fetch</code> (Corresponding to GitHub issue #6)</li>
+</ul>
+<h4 id="toc_1-1-8">1.1.8</h4>
+<p>Release date: 2022-10-08</p>
+<ul>
+<li><strong>[Fixed]</strong>: When no divergent/bidirectional peaks are detected, PINTS may throw exceptions. In this version, empty predictions will be skipped, so errors like <code>ERROR: Requested column 12, but database file stdin only has fields 1 - 0.</code> will be avoided (related GitHub issue <a href="https://github.com/hyulab/PINTS/issues/12" rel="noopener external nofollow noreferrer" target="_blank">#12</a>).</li>
+<li><strong>[Changed]</strong>: Since PINTS will automatically adjust the value of <code>--min-mu-percent</code>, now it prints info instead of a warning message when <code>--min-mu-percent</code> related issues are detected.</li>
+<li><strong>[Changed]</strong>: Reduce redundancy in the function <code>peak_calling</code> by abstracting statements about parsing input files.</li>
+<li><strong>[Added]</strong>: Added a new QC metric on the number of significant calls. If the number of significant calls is too large, PINTS will throw a warning message and suggest users switch to a more strict FDR cutoff.</li>
+</ul>
+<h4 id="toc_1-1-7">1.1.7</h4>
+<p>Release date: 2022-09-16</p>
+<ul>
+<li><strong>[Added]</strong>: unit test cases</li>
+<li><strong>[Added]</strong>: Github issue templates</li>
+<li><strong>[Changed]</strong>: Improved the logic of on-the-fly QC. If QC is enabled, now PINTS tries to directly adjust corresponding parameter (for now only <code>--min-mu-percent</code>) and log the changes. This behavior can be repressed by using <code>--disable-qc</code>.</li>
+</ul>
+<h4 id="toc_1-1-6">1.1.6</h4>
+<p>Release date: 2022-07-05</p>
+<ul>
+<li><strong>[Added]</strong>: Added chromosome length check when using BAM files as inputs</li>
+<li><strong>[Changed]</strong>: Simplified on-the-fly QC messages. So warning messages of the same type only show up once at the end of the log file.</li>
+<li><strong>[Changed]</strong>: Dropped peak length limits for empirical LER.</li>
+<li><strong>[Fixed]</strong>: Fixed inappropriate usage of <code>str.find</code> in <code>annotate_tre_with_epig_info</code>.</li>
+</ul>
+<h4 id="toc_1-1-5">1.1.5</h4>
+<p>Release date: 2022-06-16</p>
+<ul>
+<li><strong>[Fixed]</strong>: Add explicit type conversion to avoid <code>AttributeError: Can only use str accessor with string values</code></li>
+</ul>
+<h4 id="toc_1-1-4">1.1.4</h4>
+<p>Release date: 2022-06-13</p>
+<ul>
+<li><strong>[Fixed]</strong>: fixed typos in readme;</li>
+<li><strong>[Removed]</strong>: Removed scaffold codes;</li>
+<li><strong>[Changed]</strong>: changed default output from pints_boundary_extender to standard bed format</li>
+<li><strong>[Changed]</strong>: moved codes from scripts to PINTS lib for more accurate test coverage analysis;</li>
+</ul>
+<h4 id="toc_1-1-0-1-1-3">1.1.0 (1.1.3)</h4>
+<p>Release date: 2022-03-16 (for 1.1.0) and 2022-03-21 (for 1.1.3)</p>
+<ul>
+<li><strong>[Added]</strong>: Source distribution to CI/CD for creating conda packages</li>
+<li><strong>[Added]</strong>: Added <code>MANIFEST.in</code> file to include <code>versioneer.py</code> in the source distribution</li>
+<li><strong>[Added]</strong>: empirical LER</li>
+<li><strong>[Added]</strong>: On the fly QC</li>
+<li><strong>[Changed]</strong>: Switched versioning schema from PEP 440 to <code>major_ver</code>.<code>middle_ver</code>.<code>minor_ver</code>. The first two vers will be defined by tags; the <code>minor_ver</code> will be inferred automatically from commit distance.</li>
+<li><strong>[Changed]</strong>: Changed the default value for <code>--alpha</code> (for combining nearby peaks) to 0.3.</li>
+<li><strong>[Changed]</strong>: Renamed <code>README.md</code>.</li>
+<li><strong>[Changed]</strong>: Improved the implementation of independent filtering</li>
+<li><strong>[Changed]</strong>: Improved code readability with Pylint</li>
+<li><strong>[Removed]</strong>: Scaffolding parameters and simplified naming schema.</li>
+</ul>
+<h4 id="toc_0-0-1-post0-dev8">0.0.1.post0.dev8</h4>
+<p>Release date: 2022-01-07</p>
+<ul>
+<li><strong>[Changed]</strong>: Add requests to <code>install_requires</code>.</li>
+</ul>
+<h4 id="toc_0-0-1-post0-dev7">0.0.1.post0.dev7</h4>
+<p>Release date: 2022-01-07</p>
+<ul>
+<li><strong>[Changed]</strong>: Updated readme and help message</li>
+</ul>
+<h4 id="toc_0-0-1-post0-dev6">0.0.1.post0.dev6</h4>
+<p>Release date: 2022-01-05</p>
+<ul>
+<li><strong>[Fixed]</strong>: Fixed timestamp issue when creating log file</li>
+</ul>
+<h4 id="toc_0-0-1-post0-dev5">0.0.1.post0.dev5</h4>
+<p>Release date: 2022-01-04</p>
+<ul>
+<li><strong>[Added]</strong>: Introduced version check, which prints update hints if current version of PINTS is out-dated.</li>
+</ul>
+<h4 id="toc_0-0-1-post0-dev3">0.0.1.post0.dev3</h4>
+<p>Release date: 2021-10-30</p>
+<ul>
+<li><strong>[Changed]</strong>: Added pyBigWig, biopython, and matplotlib into <code>setup.install_requires</code>.</li>
+<li><strong>[Added]</strong>: Introduced a new module for refining peak calls with epigenomic evidence from PINTS webserver. This feature can be activated by using <code>--epig-annotation &lt;biosample_name&gt;</code>.</li>
+<li><strong>[Added]</strong>: error check for lowly sequenced libraries.</li>
+</ul>
+<h4 id="toc_0-0-1-post0-dev2">0.0.1.post0.dev2</h4>
+<p>Release date: 2021-08-04</p>
+<ul>
+<li><strong>[Added]</strong>: Configured CI/CD for uploading PINTS to PyPI.</li>
+<li><strong>[Added]</strong>: Added CI/CD badge in README.</li>
+</ul>
+<h4 id="toc_0-0-1-post0-dev1">0.0.1.post0.dev1</h4>
+<p>Release date: 2021-06-03</p>
+<p>Initial implementation.</p>
+<h3 id="toc_pints-web-portal">PINTS web portal</h3>
+<h4 id="toc_2022v1">2022v1</h4>
+<p>Release date: 2022-07-17</p>
+<ul>
+<li><strong>[Added]</strong>: Increased biosample coverage by adding PRO-cap libraries for:
+<ul>
+<li>GM18507, GM19238 from Kristjánsdóttir <em>et al.</em> 2020 (DOI: 10.1038/s41467-020-19829-z)</li>
+<li>MCF7 from Hou <em>et al.</em> 2022 (DOI: 10.1016/j.celrep.2022.110944)</li>
+<li>A673, Caco-2, and MCF 10A from the ENCODE portal ( using DOI: 10.1038/s41587-022-01211-7 as a placeholder for now, will update the study link after the manuscript is published)</li>
+</ul>
+</li>
+<li><strong>[Changed]</strong>: Updated epigenomic annotation to cCRE v3</li>
+<li><strong>[Changed]</strong>: Updated TF binding site annotation to JASPAR 2022</li>
+<li><strong>[Changed]</strong>: Updated functional characterization info for HepG2 by including consistent enhancer calls from Klein <em>et al.</em> 2020.</li>
+<li><strong>[Changed]</strong>: Switched to PINTS <a href="#toc_1-1-6">1.1.6</a>.</li>
+<li><strong>[Deprecated]</strong>: Removed bidirectional elements identified from RAMPAGE/CAGE libraries that overlap with protein-coding exons (except UTR).</li>
+</ul>
+<h4 id="toc_2021v1">2021v1</h4>
+<p>Release date: 2021-10-23</p>
+<p>Initial release.</p>
+            </div>
+        </div>
+        <nav id="tocSidebar" class="col-lg-2 d-none d-lg-block mt-3">
+            <div class="position-sticky" style="top: 1rem;">
+                <strong class="d-none d-md-block h6 my-2 ms-3">On this page</strong>
+                <hr class="d-none d-md-block my-2 ms-3">
+                <div class="list-group" id="tocList">
+                
+<ul class="nav nav-pill nav-bar flex-column">
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-30" href="#toc_summary">Summary</a>
+      
+    </li>
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-30" href="#toc_availability">Availability</a>
+      
+    </li>
+  
+    <li class="nav-item">
+      
+        <!-- Toggle link -->
+        <a class="nav-link d-flex justify-content-between align-items-center p-1 ps-2"
+           data-bs-toggle="collapse"
+           href="#collapse-toc_changelog"
+           role="button"
+           aria-expanded="false"
+           aria-controls="collapse-toc_changelog">
+          Changelog
+          <i class="fa-solid fa-chevron-down"></i>
+        </a>
+        <!-- Collapsible children -->
+        <div class="collapse ms-3" id="collapse-toc_changelog">
+          
+<ul class="nav nav-pill nav-bar flex-column">
+  
+    <li class="nav-item">
+      
+        <!-- Toggle link -->
+        <a class="nav-link d-flex justify-content-between align-items-center p-1 ps-2"
+           data-bs-toggle="collapse"
+           href="#collapse-toc_pints"
+           role="button"
+           aria-expanded="false"
+           aria-controls="collapse-toc_pints">
+          PINTS
+          <i class="fa-solid fa-chevron-down"></i>
+        </a>
+        <!-- Collapsible children -->
+        <div class="collapse ms-3" id="collapse-toc_pints">
+          
+<ul class="nav nav-pill nav-bar flex-column">
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-50" href="#toc_1-2-0">1.2.0</a>
+      
+    </li>
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-50" href="#toc_1-1-15">1.1.15</a>
+      
+    </li>
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-50" href="#toc_1-1-14">1.1.14</a>
+      
+    </li>
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-50" href="#toc_1-1-13">1.1.13</a>
+      
+    </li>
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-50" href="#toc_1-1-12">1.1.12</a>
+      
+    </li>
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-50" href="#toc_1-1-11">1.1.11</a>
+      
+    </li>
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-50" href="#toc_1-1-10">1.1.10</a>
+      
+    </li>
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-50" href="#toc_1-1-9">1.1.9</a>
+      
+    </li>
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-50" href="#toc_1-1-8">1.1.8</a>
+      
+    </li>
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-50" href="#toc_1-1-7">1.1.7</a>
+      
+    </li>
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-50" href="#toc_1-1-6">1.1.6</a>
+      
+    </li>
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-50" href="#toc_1-1-5">1.1.5</a>
+      
+    </li>
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-50" href="#toc_1-1-4">1.1.4</a>
+      
+    </li>
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-50" href="#toc_1-1-0-1-1-3">1.1.0 (1.1.3)</a>
+      
+    </li>
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-50" href="#toc_0-0-1-post0-dev8">0.0.1.post0.dev8</a>
+      
+    </li>
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-50" href="#toc_0-0-1-post0-dev7">0.0.1.post0.dev7</a>
+      
+    </li>
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-50" href="#toc_0-0-1-post0-dev6">0.0.1.post0.dev6</a>
+      
+    </li>
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-50" href="#toc_0-0-1-post0-dev5">0.0.1.post0.dev5</a>
+      
+    </li>
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-50" href="#toc_0-0-1-post0-dev3">0.0.1.post0.dev3</a>
+      
+    </li>
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-50" href="#toc_0-0-1-post0-dev2">0.0.1.post0.dev2</a>
+      
+    </li>
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-50" href="#toc_0-0-1-post0-dev1">0.0.1.post0.dev1</a>
+      
+    </li>
+  
+</ul>
+
+        </div>
+      
+    </li>
+  
+    <li class="nav-item">
+      
+        <!-- Toggle link -->
+        <a class="nav-link d-flex justify-content-between align-items-center p-1 ps-2"
+           data-bs-toggle="collapse"
+           href="#collapse-toc_pints-web-portal"
+           role="button"
+           aria-expanded="false"
+           aria-controls="collapse-toc_pints-web-portal">
+          PINTS web portal
+          <i class="fa-solid fa-chevron-down"></i>
+        </a>
+        <!-- Collapsible children -->
+        <div class="collapse ms-3" id="collapse-toc_pints-web-portal">
+          
+<ul class="nav nav-pill nav-bar flex-column">
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-50" href="#toc_2022v1">2022v1</a>
+      
+    </li>
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-50" href="#toc_2021v1">2021v1</a>
+      
+    </li>
+  
+</ul>
+
+        </div>
+      
+    </li>
+  
+</ul>
+
+        </div>
+      
+    </li>
+  
+</ul>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="container-fluid foot-container my-3">
+    <div class="container pt-3 text-center">
+        <ul class="list-inline">
+            <li class="list-inline-item">My pages at other platforms:</li>
+            <li class="list-inline-item">
+                <a href="https://orcid.org/0000-0003-2827-8824" rel="external nofollow" class="icon-link icon-link-hover icon-link-orcid link-underline link-underline-opacity-0" target="_blank"><i class="bi fa-brands fa-orcid"></i> ORCID</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://scholar.google.com/citations?hl=en&user=CBFQNG0AAAAJ" rel="external nofollow" class="icon-link icon-link-hover icon-link-gs link-underline link-underline-opacity-0" target="_blank"><i class="bi fa-brands fa-google-scholar"></i> Google Scholar</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://github.com/liyao001" rel="external nofollow" class="icon-link icon-link-hover icon-link-gh link-underline link-underline-opacity-0" target="_blank"><i class="bi fa-brands fa-github"></i> GitHub</a>
+            </li>
+        </ul>
+        &copy; Li Yao 2019-2025.
+    </div>
+</div>
+<script src="/assets/vendors/js/three.min.js"></script>
+
+
+<script type="text/javascript" src="/assets/js/runtime.e2987ff7.js" charset="UTF-8"></script>
+<script type="text/javascript" src="/assets/js/577.8f5be76e.js" charset="UTF-8"></script>
+<script type="text/javascript" src="/assets/js/contents.67c34ea9.js" charset="UTF-8"></script>
+
+</body>
+</html>
