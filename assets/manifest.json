@@ -1,5 +1,6 @@
 {
-  "app.js": "/assets/js/app.408b26cc.js",
+  "app.css": "/assets/css/app.bf2997ad60356a4629c8.css",
+  "app.js": "/assets/js/app.82d54393.js",
   "archives/2017_BioQueue.pdf": "/assets/archives/2017_BioQueue.pdf",
   "archives/2017_rep.pdf": "/assets/archives/2017_rep.pdf",
   "archives/2018_bioSyntax.pdf": "/assets/archives/2018_bioSyntax.pdf",
@@ -19,16 +20,18 @@
   "css/633.6ecfb0edc5aa3fd42d75.css.map": "/assets/css/633.6ecfb0edc5aa3fd42d75.css.map",
   "css/796.73088b498cbaa1fd5906.css": "/assets/css/796.73088b498cbaa1fd5906.css",
   "css/796.73088b498cbaa1fd5906.css.map": "/assets/css/796.73088b498cbaa1fd5906.css.map",
+  "css/app.bf2997ad60356a4629c8.css.map": "/assets/css/app.bf2997ad60356a4629c8.css.map",
   "entrypoints": {
     "app": {
       "assets": {
         "js": [
           "/assets/js/runtime.e2987ff7.js",
-          "/assets/js/app.408b26cc.js"
+          "/assets/js/app.82d54393.js"
         ],
         "css": [
           "/assets/css/796.73088b498cbaa1fd5906.css",
-          "/assets/css/212.5830dd80db2577f64f25.css"
+          "/assets/css/212.5830dd80db2577f64f25.css",
+          "/assets/css/app.bf2997ad60356a4629c8.css"
         ]
       }
     },
@@ -85,7 +88,7 @@
   "js/577.8f5be76e.js": "/assets/js/577.8f5be76e.js",
   "js/577.8f5be76e.js.LICENSE.txt": "/assets/js/577.8f5be76e.js.LICENSE.txt",
   "js/577.8f5be76e.js.map": "/assets/js/577.8f5be76e.js.map",
-  "js/app.408b26cc.js.map": "/assets/js/app.408b26cc.js.map",
+  "js/app.82d54393.js.map": "/assets/js/app.82d54393.js.map",
   "js/contents.67c34ea9.js.map": "/assets/js/contents.67c34ea9.js.map",
   "js/home.e2474580.js.map": "/assets/js/home.e2474580.js.map",
   "js/pub.470220b0.js.map": "/assets/js/pub.470220b0.js.map",
