@@ -62,7 +62,7 @@
         <div class="col-lg-10 default-content-container card" data-bs-spy="scroll" data-bs-target="#tocSidebar">
             <div class="card-body">
                 <h1>Peak Identifier for Nascent Transcript Starts</h1>
-                <small>Release time: 2021 - Updated: May 12, 2025, 11:34 a.m.</small>
+                <small>Release time: 2021 - Updated: June 3, 2025, 8:52 a.m.</small>
                 <hr class="d-none d-md-block my-2">
                 
                 <div class="mt-4">
@@ -80,12 +80,17 @@
 <p>PINTS web portal is freely accessible at <a href="https://pints.yulab.org/" rel="noopener external nofollow noreferrer" target="_blank">pints.yulab.org</a>.</p>
 <h2 id="toc_changelog">Changelog</h2>
 <h3 id="toc_pints">PINTS</h3>
+<h4 id="toc_1-2-1">1.2.1</h4>
+<p>Release date: 2025-05-14</p>
+<ul>
+<li><strong>[Fixed]</strong>:<strong> </strong><span class="ws-pre-wrap extended-commit-description-container f6 wb-break-word text-mono mt-2 prc-Text-Text-0ima0">Typo in <code>stats_engine.ZIP._log_likelihood_core</code> (addressing issue <a href="https://github.com/hyulab/PINTS/issues/28" rel="noopener external nofollow noreferrer">#28</a>)</span></li>
+</ul>
 <h4 id="toc_1-2-0">1.2.0</h4>
 <p>Release date: 2025-05-10</p>
 <ul>
-<li><strong>[Changed]</strong>: <span class="ws-pre-wrap f5 wb-break-word text-mono prc-Text-Text-0ima0">PINTS now includes signals from all chromosomes by default, irrespective of their naming convention. This change (addressing issue <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-hovercard-type="issue" data-hovercard-url="/hyulab/PINTS/issues/26/hovercard" data-id="3006454202" data-permission-text="Title is private" data-url="https://github.com/hyulab/PINTS/issues/26" href="https://github.com/hyulab/PINTS/issues/26">#26</a>) enhances support for diverse genomic datasets, such as plant genomes which often utilize different naming schemes. To revert to the previous behavior of analyzing only chromosomes starting with "chr", use the <code>--chromosome-start-with chr</code> flag.</span></li>
-<li><span class="ws-pre-wrap f5 wb-break-word text-mono prc-Text-Text-0ima0"><span class="ws-pre-wrap extended-commit-description-container f6 wb-break-word text-mono mt-2 prc-Text-Text-0ima0"><strong>[Changed]</strong>: For experiments with replicates, PINTS now automatically merges these replicates and performs peak calling on the combined signal. Users wishing to perform separate peak calls on individual replicates (the previous method) can specify the `--dont-merge-reps` option. </span></span></li>
-<li><span class="ws-pre-wrap f5 wb-break-word text-mono prc-Text-Text-0ima0"><span class="ws-pre-wrap extended-commit-description-container f6 wb-break-word text-mono mt-2 prc-Text-Text-0ima0"><strong>[Added]</strong>: PINTS can act in a more sensitive mode (LRT+FC). To utilize the mode, please specify the `--sensitive` flag can be used.</span></span></li>
+<li><strong>[Changed]</strong>: <span class="ws-pre-wrap f5 wb-break-word text-mono prc-Text-Text-0ima0">PINTS now includes signals from all chromosomes by default, irrespective of their naming convention. This change (addressing issue <a href="https://github.com/hyulab/PINTS/issues/26" rel="noopener external nofollow noreferrer">#26</a>) enhances support for diverse genomic datasets, such as plant genomes which often utilize different naming schemes. To revert to the previous behavior of analyzing only chromosomes starting with "chr", use the <code>--chromosome-start-with chr</code> flag.</span></li>
+<li><span class="ws-pre-wrap f5 wb-break-word text-mono prc-Text-Text-0ima0"><span class="ws-pre-wrap extended-commit-description-container f6 wb-break-word text-mono mt-2 prc-Text-Text-0ima0"><strong>[Changed]</strong>: For experiments with replicates, PINTS now automatically merges these replicates and performs peak calling on the combined signal. Users wishing to perform separate peak calls on individual replicates (the previous method) can specify the <code>--dont-merge-reps</code> option. </span></span></li>
+<li><span class="ws-pre-wrap f5 wb-break-word text-mono prc-Text-Text-0ima0"><span class="ws-pre-wrap extended-commit-description-container f6 wb-break-word text-mono mt-2 prc-Text-Text-0ima0"><strong>[Added]</strong>: PINTS can act in a more sensitive mode (LRT+FC). To utilize the mode, please specify the <code>--sensitive</code> flag can be used.</span></span></li>
 <li><span class="ws-pre-wrap f5 wb-break-word text-mono prc-Text-Text-0ima0"><span class="ws-pre-wrap extended-commit-description-container f6 wb-break-word text-mono mt-2 prc-Text-Text-0ima0"><strong>[Changed]</strong>: The description of PINTS has been updated across its various files.</span></span></li>
 </ul>
 <h4 id="toc_1-1-15">1.1.15</h4>
@@ -291,6 +296,13 @@
         <div class="collapse ms-3" id="collapse-toc_pints">
           
 <ul class="nav nav-pill nav-bar flex-column">
+  
+    <li class="nav-item">
+      
+        <!-- Regular link -->
+        <a class="nav-link p-1 ps-2 ms-50" href="#toc_1-2-1">1.2.1</a>
+      
+    </li>
   
     <li class="nav-item">
       
