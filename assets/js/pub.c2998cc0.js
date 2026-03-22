@@ -1,0 +1,2 @@
+(self.webpackChunkpython_webpack_boilerplate=self.webpackChunkpython_webpack_boilerplate||[]).push([[258],{28:function(){window.document.addEventListener("DOMContentLoaded",(function(){window.console.log("pub app loaded")}))}},function(e){e(e.s=28)}]);
+//# sourceMappingURL=pub.c2998cc0.js.map
