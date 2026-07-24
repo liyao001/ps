@@ -65,7 +65,7 @@
         "js": [
           "/assets/js/runtime.bfe0cbe4.js",
           "/assets/js/577.8f5be76e.js",
-          "/assets/js/pub.f995a37c.js"
+          "/assets/js/pub.5f0c2d7e.js"
         ],
         "css": [
           "/assets/css/796.73088b498cbaa1fd5906.css",
@@ -94,7 +94,7 @@
   "js/app.82d54393.js.map": "/assets/js/app.82d54393.js.map",
   "js/contents.15fc9c7b.js.map": "/assets/js/contents.15fc9c7b.js.map",
   "js/home.e2474580.js.map": "/assets/js/home.e2474580.js.map",
-  "js/pub.f995a37c.js.map": "/assets/js/pub.f995a37c.js.map",
+  "js/pub.5f0c2d7e.js.map": "/assets/js/pub.5f0c2d7e.js.map",
   "js/runtime.bfe0cbe4.js.map": "/assets/js/runtime.bfe0cbe4.js.map",
   "js/software.1ebd402d.js.map": "/assets/js/software.1ebd402d.js.map",
   "node_modules/@fontsource/carattere/files/carattere-latin-400-normal.woff": "/assets/node_modules/@fontsource/carattere/files/carattere-latin-400-normal.woff",
@@ -152,7 +152,7 @@
   "previews/rna-editing-binding-preference.png": "/assets/previews/rna-editing-binding-preference.png",
   "previews/rna-editing-plus.paper.png": "/assets/previews/rna-editing-plus.paper.png",
   "previews/rna-editing-plus.png": "/assets/previews/rna-editing-plus.png",
-  "pub.js": "/assets/js/pub.f995a37c.js",
+  "pub.js": "/assets/js/pub.5f0c2d7e.js",
   "runtime.js": "/assets/js/runtime.bfe0cbe4.js",
   "software.js": "/assets/js/software.1ebd402d.js",
   "supplements/2017_BioQueue.pdf": "/assets/supplements/2017_BioQueue.pdf",
