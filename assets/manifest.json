@@ -17,8 +17,8 @@
   "contents.js": "/assets/js/contents.15fc9c7b.js",
   "css/142.5d3e722f96d95214d358.css": "/assets/css/142.5d3e722f96d95214d358.css",
   "css/142.5d3e722f96d95214d358.css.map": "/assets/css/142.5d3e722f96d95214d358.css.map",
-  "css/212.e2674e76a122a921705f.css": "/assets/css/212.e2674e76a122a921705f.css",
-  "css/212.e2674e76a122a921705f.css.map": "/assets/css/212.e2674e76a122a921705f.css.map",
+  "css/212.bf1fb2d8c37cb16344bf.css": "/assets/css/212.bf1fb2d8c37cb16344bf.css",
+  "css/212.bf1fb2d8c37cb16344bf.css.map": "/assets/css/212.bf1fb2d8c37cb16344bf.css.map",
   "css/319.fce820fe017773d89341.css": "/assets/css/319.fce820fe017773d89341.css",
   "css/319.fce820fe017773d89341.css.map": "/assets/css/319.fce820fe017773d89341.css.map",
   "css/796.73088b498cbaa1fd5906.css": "/assets/css/796.73088b498cbaa1fd5906.css",
@@ -33,7 +33,7 @@
         ],
         "css": [
           "/assets/css/796.73088b498cbaa1fd5906.css",
-          "/assets/css/212.e2674e76a122a921705f.css",
+          "/assets/css/212.bf1fb2d8c37cb16344bf.css",
           "/assets/css/app.bf2997ad60356a4629c8.css"
         ]
       }
@@ -56,7 +56,7 @@
         ],
         "css": [
           "/assets/css/796.73088b498cbaa1fd5906.css",
-          "/assets/css/212.e2674e76a122a921705f.css"
+          "/assets/css/212.bf1fb2d8c37cb16344bf.css"
         ]
       }
     },
@@ -65,13 +65,13 @@
         "js": [
           "/assets/js/runtime.bfe0cbe4.js",
           "/assets/js/577.8f5be76e.js",
-          "/assets/js/pub.5f0c2d7e.js"
+          "/assets/js/pub.07ec54bf.js"
         ],
         "css": [
           "/assets/css/796.73088b498cbaa1fd5906.css",
           "/assets/css/142.5d3e722f96d95214d358.css",
           "/assets/css/319.fce820fe017773d89341.css",
-          "/assets/css/212.e2674e76a122a921705f.css"
+          "/assets/css/212.bf1fb2d8c37cb16344bf.css"
         ]
       }
     },
@@ -94,7 +94,7 @@
   "js/app.82d54393.js.map": "/assets/js/app.82d54393.js.map",
   "js/contents.15fc9c7b.js.map": "/assets/js/contents.15fc9c7b.js.map",
   "js/home.e2474580.js.map": "/assets/js/home.e2474580.js.map",
-  "js/pub.5f0c2d7e.js.map": "/assets/js/pub.5f0c2d7e.js.map",
+  "js/pub.07ec54bf.js.map": "/assets/js/pub.07ec54bf.js.map",
   "js/runtime.bfe0cbe4.js.map": "/assets/js/runtime.bfe0cbe4.js.map",
   "js/software.1ebd402d.js.map": "/assets/js/software.1ebd402d.js.map",
   "node_modules/@fontsource/carattere/files/carattere-latin-400-normal.woff": "/assets/node_modules/@fontsource/carattere/files/carattere-latin-400-normal.woff",
@@ -152,7 +152,7 @@
   "previews/rna-editing-binding-preference.png": "/assets/previews/rna-editing-binding-preference.png",
   "previews/rna-editing-plus.paper.png": "/assets/previews/rna-editing-plus.paper.png",
   "previews/rna-editing-plus.png": "/assets/previews/rna-editing-plus.png",
-  "pub.js": "/assets/js/pub.5f0c2d7e.js",
+  "pub.js": "/assets/js/pub.07ec54bf.js",
   "runtime.js": "/assets/js/runtime.bfe0cbe4.js",
   "software.js": "/assets/js/software.1ebd402d.js",
   "supplements/2017_BioQueue.pdf": "/assets/supplements/2017_BioQueue.pdf",
